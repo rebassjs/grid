@@ -93,8 +93,10 @@ In addition to the `Grid` component, Grid Styled exports these other primitive h
 import { Half, Third, Quarter } from 'grid-styled'
 ```
 
-- `Half` - Grid component that goes half width at the small breakpoint
-- `Third` - Grid component that goes one-third width at the small breakpoint
-- `Quarter` - Grid component that goes one-quart width at the medium breakpoint
+- `Half` - Grid component that spans oes half width at the small breakpoint
+- `Third` - Grid component that spans oes one-third width at the small breakpoint
+- `Quarter` - Grid component that spans oes one-quarter width at the medium breakpoint
+- `GoldenA` - Grid component that spans the golden ratio a width at the medium breakpoint (where a / b == φ)
+- `GoldenB` - Grid component that spans the golden ratio b width at the medium breakpoint
 
 MIT License

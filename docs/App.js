@@ -3,7 +3,7 @@ import React from 'react'
 import { compose, withState } from 'recompose'
 import styled, { ThemeProvider } from 'styled-components'
 import classnames from 'classnames'
-import Grid, { Half, Third, Quarter } from '../src/Grid'
+import Grid, { Half, Third, Quarter, GoldenA, GoldenB } from '../src/Grid'
 import CarbonAd from './CarbonAd'
 import TweetButton from './TweetButton'
 
@@ -138,6 +138,10 @@ const App = ({
             </div>
             <div>
               {demo(6)({ sm: 1/2, md: 1/6 })}
+            </div>
+            <div>
+              <GoldenA><Box>GoldenA</Box></GoldenA>
+              <GoldenB><Box>GoldenB</Box></GoldenB>
             </div>
           </section>
         </main>

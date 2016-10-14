@@ -43,5 +43,12 @@ export const Half = props => <Grid {...props} sm={1/2} />
 export const Third = props => <Grid {...props} sm={1/3} />
 export const Quarter = props => <Grid {...props} md={1/4} />
 
+const φ = (1 + Math.sqrt(5)) / 2
+const ga = φ - 1
+const gb = 1 - ga
+
+export const GoldenA = props => <Grid {...props} sm={ga} />
+export const GoldenB = props => <Grid {...props} sm={gb} />
+
 export default Grid
 

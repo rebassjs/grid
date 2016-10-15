@@ -32,7 +32,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "styled-components": "^1.0.0"
+    "styled-components": "^1.0.4"
   },
   "ava": {
     "require": [

@@ -1,0 +1,10 @@
+{
+  "name": "grid-styled-constants",
+  "version": "2.0.0-0",
+  "description": "Default style constants for grid-styled",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Brent Jackson",
+  "license": "MIT"
+}

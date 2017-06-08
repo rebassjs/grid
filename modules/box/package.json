@@ -1,21 +1,22 @@
 {
-  "name": "grid-styled",
+  "name": "box-styled",
   "version": "2.0.0-0",
-  "description": "Responsive React grid system built with styled-components",
-  "main": "dist/Grid.js",
+  "description": "React layout component built with styled-components",
+  "main": "dist/Box.js",
   "scripts": {
     "prepublish": "babel src -d dist",
     "test": "ava"
   },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "grid-styled-constants": "2.0.0-0",
     "styled-components": "^2.0.1"
   },
-  "keywords": [],
-  "author": "Brent Jackson",
-  "license": "MIT",
   "devDependencies": {
     "ava": "^0.19.1",
+    "babel-core": "^6.24.1",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

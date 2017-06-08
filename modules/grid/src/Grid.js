@@ -5,7 +5,7 @@ import { breakpoints } from 'grid-styled-constants'
 export const toArray = n => Array.isArray(n) ? n : [ n ]
 // todo: add px
 export const percent = n => (typeof n !== 'number' || n > 1) ? n : `${n * 100}%`
-export const media = size => `@media screen and (min-width: ${size}em)`
+export const media = size => `@media screen and (min-width:${size}em)`
 export const width = breaks => props => props.width
   ? (
     toArray(props.width).map((n, i) => breaks[i]
@@ -30,6 +30,7 @@ const Grid = styled.div`
   padding-right: ${pad}px;
   */
 
+// Move to separate package
 export const Half = props => <Grid {...props} width={[ 1, 1/2 ]} />
 export const Third = props => <Grid {...props} width={[ 1, 1/3 ]} />
 export const Quarter = props => <Grid {...props} width={[ 1, 1/4 ]} />

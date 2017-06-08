@@ -1,7 +1,6 @@
 import React from 'react'
 import XRay from 'react-x-ray'
-import Box from 'box-styled'
-import Grid from 'grid-styled'
+import { Flex, Box, Grid } from 'grid-styled'
 
 class App extends React.Component {
   render () {
@@ -21,6 +20,11 @@ class App extends React.Component {
           <Grid p={2} width={[ 1, 1/2, 1/4 ]}>Grid</Grid>
           <Grid p={2} width={[ 1, 1/2, 1/4 ]}>Grid</Grid>
         </Box>
+        <Flex wrap>
+          <Grid p={2} width={[ 1, 1/2, 1/3 ]}>Flex</Grid>
+          <Grid p={2} width={[ 1, 1/2, 1/3 ]}>Grid</Grid>
+          <Grid p={2} width={[ 1, null, 1/3 ]}>Grid</Grid>
+        </Flex>
       </XRay>
     )
   }

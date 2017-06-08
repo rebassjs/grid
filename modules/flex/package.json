@@ -1,8 +1,8 @@
 {
-  "name": "grid-styled-grid",
+  "name": "flex-styled",
   "version": "2.0.0-0",
-  "description": "Responsive React grid system built with styled-components",
-  "main": "dist/Grid.js",
+  "description": "Responsive React flexbox component built with styled-components",
+  "main": "dist/Flex.js",
   "scripts": {
     "prepublish": "babel src -d dist",
     "test": "ava"

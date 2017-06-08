@@ -26,6 +26,7 @@
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.5.4",
+    "react-live": "^1.5.4",
     "react-x-ray": "^1.0.0-1",
     "rebass": "^0.3.3",
     "recompose": "^0.20.2",

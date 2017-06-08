@@ -12,7 +12,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      'grid-styled': path.join(__dirname, 'modules/grid/src/Grid.js'),
+      'grid-styled': path.join(__dirname, 'modules/core/src/index.js'),
       'box-styled': path.join(__dirname, 'modules/box/src/Box.js'),
     }
   },

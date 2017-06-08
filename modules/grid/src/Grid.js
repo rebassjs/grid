@@ -1,34 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
+import Box from 'box-styled'
 import { breakpoints } from 'grid-styled-constants'
 
 export const toArray = n => Array.isArray(n) ? n : [ n ]
 // todo: add px
 export const percent = n => (typeof n !== 'number' || n > 1) ? n : `${n * 100}%`
 export const media = size => `@media screen and (min-width:${size}em)`
-export const width = breaks => props => props.width
+export const width = breaks => props => props.w
   ? (
-    toArray(props.width).map((n, i) => breaks[i]
+    toArray(props.w).map((n, i) => breaks[i]
       ? `${media(breaks[i])}{width:${percent(n)};}`
       : `width:${percent(n)};`
     ).join('\n')
   )
-  : null
+  : 'width:100%;'
 
 
 const align = props => props.align || 'top'
 
-const Grid = styled.div`
-  box-sizing: border-box;
+// hoc to remove unwanted width attribute
+const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />
+
+const Grid = hoc(styled(Box)`
   display: inline-block;
   vertical-align: ${align};
-  width: 100%;
   ${width([ null, ...breakpoints ])}
-`
-  /* replace with box-styled
-  padding-left: ${pad}px;
-  padding-right: ${pad}px;
-  */
+`)
+
+
 
 // Move to separate package
 export const Half = props => <Grid {...props} width={[ 1, 1/2 ]} />

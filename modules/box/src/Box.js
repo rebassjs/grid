@@ -19,7 +19,8 @@ export const getProperties = key => {
   return dirs.map(dir => prop + dir)
 }
 
-export const px = scale => n => typeof n === 'number' ? (scale[n] || n) + 'px' : n
+export const px = scale => n => typeof n === 'number' ? neg(scale, n) + 'px' : n
+export const neg = (scale, n) => (scale[Math.abs(n)] || Math.abs(n)) * (n < 0 ? -1 : 1)
 
 const properties = {
   m: 'margin',
@@ -36,6 +37,7 @@ const directions = {
 }
 
 const Box = styled.div`
+  box-sizing:border-box;
   ${parse(space)}
 `
 

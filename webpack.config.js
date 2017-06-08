@@ -1,4 +1,3 @@
-
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -11,21 +10,26 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  resolve: {
+    alias: {
+      'grid-styled': path.join(__dirname, 'modules/grid/src/Grid.js'),
+      'box-styled': path.join(__dirname, 'modules/box/src/Box.js'),
+    }
+  },
+
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       }
     ]
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new HtmlWebpackPlugin({
       template: 'docs/template.ejs'
@@ -36,4 +40,3 @@ module.exports = {
     contentBase: 'docs/'
   }
 }
-

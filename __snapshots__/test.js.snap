@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+<div
+  className="sc-bdVaJa gahfgY"
+/>
+`;
+
+exports[`Flex renders 1`] = `
+<div
+  className="sc-htpNat bxKUVX sc-bdVaJa kXnfdi"
+/>
+`;
+
+exports[`Grid renders 1`] = `
+<div
+  className="sc-bwzfXH dCRcEt sc-bdVaJa kXnfdi"
+/>
+`;

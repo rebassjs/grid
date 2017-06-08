@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Box from 'box-styled'
-import { breakpoints } from 'grid-styled-constants'
+import Box from './Box'
+import { breakpoints } from './constants'
 
 export const toArray = n => Array.isArray(n) ? n : [ n ]
 export const percent = n => (typeof n !== 'number' || n > 1) ? n : `${n * 100}%`

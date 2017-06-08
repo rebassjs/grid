@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space } from 'grid-styled-constants'
+import { space } from './constants'
 
 const REG = /^[mp][trblxy]?$/
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Grid from 'grid-styled-grid'
+import Grid from './Grid'
 
 export const φ = (1 + Math.sqrt(5)) / 2
 export const ga = φ - 1

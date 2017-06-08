@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Box from 'box-styled'
-
-// hoc to remove unwanted attributes
-// const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />
+import Box from './Box'
 
 const align = props => props.align ? `align-items:${props.align};` : null
 const justify = props => props.justify ? `justify-content:${props.justify};` : null

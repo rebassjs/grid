@@ -1,173 +1,140 @@
-
 import React from 'react'
-import { compose, withState } from 'recompose'
-import styled, { ThemeProvider } from 'styled-components'
-import classnames from 'classnames'
-import Grid, { Half, Third, Quarter, GoldenA, GoldenB } from '../src/Grid'
-import CarbonAd from './CarbonAd'
-import TweetButton from './TweetButton'
+import XRay from 'react-x-ray'
+import { ThemeProvider } from 'styled-components'
+import {
+  LiveProvider,
+  LiveError,
+  LiveEditor,
+  LivePreview
+} from 'react-live'
+import { createProvider } from 'funcup'
+import GS, { Flex, Box, Grid } from 'grid-styled'
+import { colors } from './styles'
+import Color from './Color'
+import Bar from './Bar'
+import Button from './Button'
+import ArrowButton from './ArrowButton'
+import BaseButton from './BaseButton'
+import examples from './examples'
+import { inc, dec, toggleXRay } from './updaters'
 
-const Pad = styled.div`
-  padding-top: 32px;
-  padding-bottom: 32px;
-`
+const Btn = BaseButton.withComponent('a')
 
-// Demo box
-const Box = styled(Pad)`
-  font-weight: bold;
-  box-shadow: inset 0 0 0 1px var(--green);
-`
-
-const flip = (v = 1/2) => Math.random() < v
-
-const demo = length => props => Array.from({ length }).map((n, i) => (
-  <Grid
-    key={i}
-    className={classnames({ 'hilite': flip(1/6) })}
-    {...(props[i] || props)}>
-    <Box>
-      Grid
-    </Box>
-  </Grid>
-))
-
-const App = ({
-  gutter,
-  grid,
-  setGutter,
-  setGrid
-}) => {
-  const theme = {
-    gutter
-  }
-
-  const toggleGrid = () => setGrid(!grid)
-
-  const css = [
-    grid ? 'body{ background-image: linear-gradient(transparent 7px, var(--green) 7px); background-size: 8px 8px; }' : ''
-  ].join('')
-
-  return (
-    <ThemeProvider theme={theme}>
-      <div onClick={toggleGrid}>
-        <style dangerouslySetInnerHTML={{ __html: css }} />
-        <header className='mt5 mb5'>
-          <Grid
-            align='middle'
-            md={2/3}
-            className='hilite'>
-            <h1 className='h1 xh0'>Grid Styled</h1>
-            <p className='h3 bold'>
-              Responsive React grid system built with <a href='https://github.com/styled-components/styled-components'>styled-components</a>.
-            </p>
-            <p>
-                <a className='bold'
-                  href='https://github.com/jxnblk/grid-styled'>GitHub</a>
-            </p>
-          </Grid>
-          <Grid
-            align='middle'
-            md={1/3}>
-            <Pad>
-              <CarbonAd />
-            </Pad>
-          </Grid>
-          <Grid>
-            <Pad>
-              <TweetButton
-                text='Grid Style: responsive React grid system built with style-components'
-              />
-            </Pad>
-          </Grid>
-        </header>
-        <main>
-          <section id='demo'>
-            <div>
-              {demo(2)({ sm: 1/2 })}
-            </div>
-            <div>
-              {demo(4)({ sm: 1/2, md: 1/4 })}
-            </div>
-            <div>
-              {demo(8)({ sm: 1/2, md: 1/8 })}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 1/4, md: 1/8 },
-                { sm: 3/4, md: 7/8 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 1/4 },
-                { sm: 3/4 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 1/2, md: 3/8 },
-                { sm: 1/2, md: 5/8 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 1/2 },
-                { sm: 1/2 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 1/2, md: 5/8 },
-                { sm: 1/2, md: 3/8 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 3/4 },
-                { sm: 1/4 }
-              ])}
-            </div>
-            <div>
-              {demo(2)([
-                { sm: 3/4, md: 7/8 },
-                { sm: 1/4, md: 1/8 }
-              ])}
-            </div>
-            <div>
-              {demo(3)({ sm: 1/3 })}
-            </div>
-            <div>
-              {demo(6)({ sm: 1/2, md: 1/6 })}
-            </div>
-            <div>
-              <GoldenA><Box>GoldenA</Box></GoldenA>
-              <GoldenB><Box>GoldenB</Box></GoldenB>
-            </div>
-          </section>
-        </main>
-        <footer>
-          <Grid>
-            <Pad>
-              <ul>
-                <li>
-                  <a href='https://github.com/jxnblk/grid-styled'>GitHub</a>
-                </li>
-                <li>
-                  <a href='http://jxnblk.com'>Made by Jxnblk</a>
-                </li>
-              </ul>
-            </Pad>
-          </Grid>
-        </footer>
-      </div>
-    </ThemeProvider>
-  )
+const scope = {
+  Flex,
+  Box,
+  Grid,
+  Color,
+  Bar,
+  Button,
+  colors
 }
 
-const hoc = compose(
-  withState('gutter', 'setGutter', 32),
-  withState('grid', 'setGrid', false),
-)
+class App extends React.Component {
+  render () {
+    const {
+      xray,
+      index,
+      update
+    } = this.props
 
-export default hoc(App)
+    const code = examples[Math.abs(index) % examples.length]
 
+    return (
+      <div style={sx.root}>
+        <LiveProvider
+          code={code}
+          scope={scope}
+          mountStylesheet={false}>
+          <XRay
+            disabled={!xray}
+            style={sx.xray}
+            color={colors.magenta}
+            backgroundColor='#000'>
+            <div style={sx.top}>
+              <LivePreview style={sx.preview} />
+            </div>
+          </XRay>
+          <LiveError style={sx.error} />
+          <Flex align='center' style={sx.controls}>
+            <Btn href='https://github.com/jxnblk/grid-styled'>
+              GitHub
+            </Btn>
+            <Btn href='http://jxnblk.com'>
+              Made by Jxnblk
+            </Btn>
+            <Box ml='auto' />
+            <BaseButton
+              onClick={e => update(toggleXRay)}
+              active={xray}
+              children='X-Ray'
+            />
+            <ArrowButton
+              left
+              title='Previous'
+              onClick={e => update(dec)}
+            />
+            <ArrowButton
+              onClick={e => update(inc)}
+              title='Next'
+            />
+          </Flex>
+          <LiveEditor style={sx.bottom} />
+        </LiveProvider>
+      </div>
+    )
+  }
+}
+
+const sx = {
+  root: {
+    position: 'relative'
+  },
+  top: {
+    minHeight: '70vh',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  preview: {
+    width: '100%'
+  },
+  controls: {
+    color: colors.teal,
+    backgroundColor: '#444',
+    WebkitFontSmoothing: 'antialiased'
+  },
+  bottom: {
+    minHeight: '40vh',
+    fontFamily: 'SF Mono, Menlo, monospace',
+    fontSize: 12,
+    margin: 0,
+    padding: 16,
+    overflow: 'auto',
+    color: colors.teal,
+    backgroundColor: '#000',
+    outline: 'none',
+    WebkitFontSmoothing: 'antialiased'
+  },
+  error: {
+    fontFamily: 'SF Mono, Menlo, monospace',
+    fontSize: 12,
+    position: 'fixed',
+    zIndex: 1,
+    top: 0,
+    right: 0,
+    left: 0,
+    padding: 16,
+    color: '#fff',
+    backgroundColor: '#f00'
+  },
+  xray: {
+    transition: 'background-color .3s ease-out'
+  }
+}
+
+const initialState = {
+  index: 0,
+  xray: false
+}
+
+export default createProvider(initialState)(App)

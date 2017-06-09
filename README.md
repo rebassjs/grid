@@ -1,7 +1,9 @@
 
-# Grid Styled
+# [Grid Styled](http://jxnblk.com/grid-styled)
 
 Responsive React grid system built with [styled-components](https://github.com/styled-components/styled-components)
+
+[![Build Status](https://travis-ci.org/jxnblk/grid-styled.svg?branch=master)](https://travis-ci.org/jxnblk/grid-styled)
 
 ## Getting Started
 
@@ -9,62 +11,177 @@ Responsive React grid system built with [styled-components](https://github.com/s
 npm i grid-styled
 ```
 
-```js
+```jsx
 import React from 'react'
-import Grid from 'grid-styled'
+import { Flex, Box } from 'grid-styled'
 
 const App = () => (
-  <div>
-    <Grid sm={1/2}>
+  <Flex>
+    <Box width={1/2} px={2}>
       Half width
-    </Grid>
-    <Grid sm={1/2}>
+    </Box>
+    <Box width={1/2} px={2}>
       Half width
-    </Grid>
-  </div>
+    </Box>
+  </Flex>
 )
-
-export default App
 ```
 
-```js
+```jsx
 // Different widths at different breakpoints
-<Grid
-  xs={1/2}
-  sm={1/3}
-  md={1/4}
-  lg={1/6}
+<Box
+  width={[
+    1/2,
+    1/3,
+    1/4,
+    1/6
+  ]}
 />
+
+// Fixed pixel width
+<Box width={256} />
+
+// CSS value width
+<Box width='40em' />
 ```
 
-## Props
+```jsx
+// Padding
+<Box p={2} />
 
-- `xs`: (number) width as a fraction for all breakpoints
-- `sm`: (number) width as a fraction for the small breakpoint and up
-- `md`: (number) width as a fraction for the medium breakpoint and up
-- `lg`: (number) width as a fraction for the large breakpoint and up
+// Padding top
+<Box pt={2} />
+
+// Padding bottom
+<Box pb={2} />
+
+// Padding left
+<Box pl={2} />
+
+// Padding right
+<Box pr={2} />
+
+// x-axis padding (left and right)
+<Box px={2} />
+
+// y-axis padding (top and bottom)
+<Box py={2} />
+```
+
+```jsx
+// Margin
+<Box m={2} />
+
+// Margin top
+<Box mt={2} />
+
+// Margin bottom
+<Box mb={2} />
+
+// Margin left
+<Box ml={2} />
+
+// Margin right
+<Box mr={2} />
+
+// x-axis margin (left and right)
+<Box mx={2} />
+
+// y-axis margin (top and bottom)
+<Box my={2} />
+```
+
+```jsx
+// margin auto
+<Box m='auto' />
+
+// negative margins
+<Box mx={-2} />
+```
+
+```jsx
+// Display inline-block grid
+import { Grid } from 'grid-styled'
+
+<div>
+  <Grid width={1/2}>Half</Grid>
+  <Grid width={1/2}>Half</Grid>
+</div>
+```
+
+
+## `<Box />`
+
+The Box component handles width, margin and padding.
+
+### Props
+
+#### `width` (number|string|array)
+
+Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
+Pass an array to set different widths at different breakpoints.
+
+#### Margin and Padding Props
+
+Both margin and padding props accept numbers or strings.
+Using a number from `0-4` will reference a step on the spacing scale.
+Larger numbers are converted to pixel values.
+Negative Numbers can be used to set negative margins and compensate for grid gutters.
+Strings are passed directly for other valid CSS values.
+
+Margin and padding props follow a shorthand syntax for specifying direction.
+
+- `m`:  margin
+- `mt`: margin-top
+- `mr`: margin-right
+- `mb`: margin-bottom
+- `ml`: margin-left
+- `mx`: margin-left and margin-right
+- `my`: margin-top and margin-bottom
+- `p`:  padding
+- `pt`: padding-top
+- `pr`: padding-right
+- `pb`: padding-bottom
+- `pl`: padding-left
+- `px`: padding-left and padding-right
+- `py`: padding-top and padding-bottom
+
+
+## `<Flex />`
+
+The Flex component extends the Box component and sets display flex.
+It also includes the following props:
+
+- `align` (string) sets `align-items`
+- `justify` (string) sets `justify-content`
+- `order` (number) sets `order`
+- `wrap` (boolean) sets `flex-wrap: wrap`
+- `column` (boolean) sets `flex-direction: column`
+
+
+## `<Grid />`
+
+The Grid component extends the Box component and sets display inline-block
+for an alternative to flexbox layout.
+
 
 ## Theming
 
-Grid Styled has some smart defaults, but to customize the values,
+Grid Styled uses smart defaults, but to customize the values,
 use styled-components’ `ThemeProvider` component.
 
-```js
+```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 const App = () => (
   <ThemeProvider
     theme={{
-      gutter: 48,
-      breakpoints: {
-        small: '32em',
-        medium: '48em',
-        large: '64em'
-      }
+      space: [ 0, 6, 12, 18, 24 ],
+      breakpoints: [ 32, 48, 64 ]
     }}>
     <div>
-      <Grid>Grid with custom gutter and breakpoints</Grid>
+      <Grid>Grid with custom spacing scale and breakpoints</Grid>
     </div>
   </ThemeProvider>
 )
@@ -72,31 +189,19 @@ const App = () => (
 
 ### Breakpoints
 
-Grid components use a mobile-first responsive approach,
+The Grid component uses a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
 Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
-To customize, provide an object with the following three keys: `small`, `medium`, `large`.
-It's recommended to use ems for defining media queries.
+To customize, provide an array of numbers that will be converted to ems.
 
 
-### Gutter
+### Spacing Scale
 
-All Grid components have 32px left and right padding.
-To customize the grid gutter, pass a number to `theme.gutter` with the ThemeProvider component.
+Grid Styled components' margin and padding props use a 4 step spacing scale to help
+keep things aligned and keep layouts consistent.
 
-## Components
+The default scale is based on powers of two: `[ 0, 8, 16, 32, 64 ]`
 
-In addition to the `Grid` component, Grid Styled exports these other primitive helper components:
-
-```js
-import { Half, Third, Quarter } from 'grid-styled'
-```
-
-- `Half` - Grid component that spans oes half width at the small breakpoint
-- `Third` - Grid component that spans oes one-third width at the small breakpoint
-- `Quarter` - Grid component that spans oes one-quarter width at the medium breakpoint
-- `GoldenA` - Grid component that spans the golden ratio a width at the medium breakpoint (where a / b == φ)
-- `GoldenB` - Grid component that spans the golden ratio b width at the medium breakpoint
 
 MIT License

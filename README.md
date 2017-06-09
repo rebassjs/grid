@@ -3,6 +3,8 @@
 
 Responsive React grid system built with [styled-components](https://github.com/styled-components/styled-components)
 
+[![Build Status](https://travis-ci.org/jxnblk/grid-styled.svg?branch=master)](https://travis-ci.org/jxnblk/grid-styled)
+
 ## Getting Started
 
 ```sh

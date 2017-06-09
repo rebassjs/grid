@@ -9,27 +9,25 @@ Responsive React grid system built with [styled-components](https://github.com/s
 npm i grid-styled
 ```
 
-```js
+```jsx
 import React from 'react'
-import { Grid } from 'grid-styled'
+import { Flex, Box } from 'grid-styled'
 
 const App = () => (
-  <div>
-    <Grid width={1/2}>
+  <Flex>
+    <Box width={1/2} px={2}>
       Half width
-    </Grid>
-    <Grid width={1/2}>
+    </Box>
+    <Box width={1/2} px={2}>
       Half width
-    </Grid>
-  </div>
+    </Box>
+  </Flex>
 )
-
-export default App
 ```
 
-```js
+```jsx
 // Different widths at different breakpoints
-<Grid
+<Box
   width={[
     1/2,
     1/3,
@@ -40,31 +38,82 @@ export default App
 ```
 
 ```jsx
-// Flexbox
-import { Flex, Grid } from 'grid-styled'
+// Padding
+<Box p={2} />
+
+// Padding top
+<Box pt={2} />
+
+// Padding bottom
+<Box pb={2} />
+
+// Padding left
+<Box pl={2} />
+
+// Padding right
+<Box pr={2} />
+
+// x-axis padding (left and right)
+<Box px={2} />
+
+// y-axis padding (top and bottom)
+<Box py={2} />
 ```
 
-## Components
+```jsx
+// Margin
+<Box m={2} />
 
-- Grid
-- Box
-- Flex
-- Half, Third, Quart, Golden.A, Golden.B
+// Margin top
+<Box mt={2} />
 
-### `<Grid />`
-### `<Box />`
-### `<Flex />`
-### `<Half />`
+// Margin bottom
+<Box mb={2} />
+
+// Margin left
+<Box ml={2} />
+
+// Margin right
+<Box mr={2} />
+
+// x-axis margin (left and right)
+<Box mx={2} />
+
+// y-axis margin (top and bottom)
+<Box my={2} />
+```
+
+```jsx
+// margin auto
+<Box m='auto' />
+
+// negative margins
+<Box mx={-2} />
+```
+
+```jsx
+// Display inline-block grid
+import { Grid } from 'grid-styled'
+
+<div>
+  <Grid width={1/2}>Half</Grid>
+  <Grid width={1/2}>Half</Grid>
+</div>
+```
 
 
-## Props
+## `<Box />`
 
-### `width` (number|string|array)
+The Box component handles width, margin and padding.
+
+### Props
+
+#### `width` (number|string|array)
 
 Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
 Pass an array to set different widths at different breakpoints.
 
-### Margin and Padding
+#### Margin and Padding Props
 
 Both margin and padding props accept numbers or strings.
 Using a number from `0-4` will reference a step on the spacing scale.
@@ -74,14 +123,14 @@ Strings are passed directly for other valid CSS values.
 
 Margin and padding props follow a shorthand syntax for specifying direction.
 
-- `m`: margin
+- `m`:  margin
 - `mt`: margin-top
 - `mr`: margin-right
 - `mb`: margin-bottom
 - `ml`: margin-left
 - `mx`: margin-left and margin-right
 - `my`: margin-top and margin-bottom
-- `p`: padding
+- `p`:  padding
 - `pt`: padding-top
 - `pr`: padding-right
 - `pb`: padding-bottom
@@ -89,26 +138,39 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 - `px`: padding-left and padding-right
 - `py`: padding-top and padding-bottom
 
+
+## `<Flex />`
+
+The Flex component extends the Box component and sets display flex.
+It also includes the following props:
+
+- `align`
+- `justify`
+- `order`
+- `wrap`
+- `column`
+
+
+## `<Grid />`
+
+The Grid component extends the Box component and sets display inline-block
+for an alternative to flexbox layout.
+
+
 ## Theming
 
-Grid Styled has some smart defaults, but to customize the values,
+Grid Styled uses smart defaults, but to customize the values,
 use styled-components’ `ThemeProvider` component.
 
-```js
+```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 const App = () => (
   <ThemeProvider
     theme={{
-      space: [
-        0, 6, 12, 18, 24
-      ],
-      breakpoints: [
-        32,
-        48,
-        64
-      ]
+      space: [ 0, 6, 12, 18, 24 ],
+      breakpoints: [ 32, 48, 64 ]
     }}>
     <div>
       <Grid>Grid with custom spacing scale and breakpoints</Grid>
@@ -130,6 +192,8 @@ To customize, provide an array of numbers that will be converted to ems.
 
 Grid Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
+
+The default scale is based on powers of two: `[ 0, 8, 16, 32, 64 ]`
 
 
 MIT License

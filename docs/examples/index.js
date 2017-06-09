@@ -9,6 +9,7 @@ import Negative from './Negative.jsx'
 import Flexbox from './Flexbox.jsx'
 import RasterSysteme from './RasterSysteme.jsx'
 import Movement from './Movement.jsx'
+import Offset from './Offset.jsx'
 
 export default [
   Hero,
@@ -22,4 +23,5 @@ export default [
   Flexbox,
   RasterSysteme,
   Movement,
+  Offset,
 ]

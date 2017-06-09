@@ -1,5 +1,6 @@
 import React from 'react'
 import XRay from 'react-x-ray'
+import { ThemeProvider } from 'styled-components'
 import {
   LiveProvider,
   LiveError,

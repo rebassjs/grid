@@ -85,7 +85,7 @@ test('media wraps numbers in a media query string', t => {
 
 test('width converts width props to css', t => {
   const a = width([])({ w: 1/2 })
-  const b = width([ null, 40 ])({ w: [ 1/2, 1/4 ] })
+  const b = width([ 40 ])({ w: [ 1/2, 1/4 ] })
   t.is(a, 'width:50%;')
   t.is(b, 'width:50%;\n@media screen and (min-width:40em){width:25%;}')
 })

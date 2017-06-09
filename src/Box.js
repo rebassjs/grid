@@ -1,9 +1,22 @@
+import React from 'react'
 import styled from 'styled-components'
-import { space } from './constants'
+import { breakpoints, space } from './constants'
 
 const REG = /^[mp][trblxy]?$/
 
-export const parse = scale => props => {
+export const toArray = n => Array.isArray(n) ? n : [ n ]
+export const percent = n => (typeof n !== 'number' || n > 1) ? n : `${n * 100}%`
+export const media = size => `@media screen and (min-width:${size}em)`
+export const width = breaks => props => props.w
+  ? (
+    toArray(props.w).map((n, i) => breaks[i]
+      ? `${media(breaks[i])}{width:${percent(n)};}`
+      : `width:${percent(n)};`
+    ).join('\n')
+  )
+  : ''
+
+export const whitespace = scale => props => {
   const keys = Object.keys(props).filter(key => REG.test(key))
   return keys.map(key => {
     const p = getProperties(key)
@@ -36,9 +49,13 @@ const directions = {
   y: [ '-top', '-bottom' ]
 }
 
-const Box = styled.div`
+// hoc to remove unwanted width attribute
+const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />
+
+const Box = hoc(styled.div`
   box-sizing:border-box;
-  ${parse(space)}
-`
+  ${width([ null, ...breakpoints ])}
+  ${whitespace(space)}
+`)
 
 export default Box

@@ -7,18 +7,25 @@ import {
   Flex
 } from './src'
 import { breakpoints, space } from './src/constants'
-import { parse, getProperties, px } from './src/Box'
-import { toArray, percent, media, width } from './src/Grid'
+import {
+  whitespace,
+  getProperties,
+  px,
+  toArray,
+  percent,
+  media,
+  width
+} from './src/Box'
 
 // Box
 test('parses padding props', t => {
-  const a = parse(space)({ p: 1 })
-  const b = parse(space)({ pt: 2 })
-  const c = parse(space)({ pr: 3 })
-  const d = parse(space)({ pb: 4 })
-  const e = parse(space)({ pl: 1 })
-  const f = parse(space)({ px: 2 })
-  const g = parse(space)({ py: 3 })
+  const a = whitespace(space)({ p: 1 })
+  const b = whitespace(space)({ pt: 2 })
+  const c = whitespace(space)({ pr: 3 })
+  const d = whitespace(space)({ pb: 4 })
+  const e = whitespace(space)({ pl: 1 })
+  const f = whitespace(space)({ px: 2 })
+  const g = whitespace(space)({ py: 3 })
   t.is(a, 'padding:8px')
   t.is(b, 'padding-top:16px')
   t.is(c, 'padding-right:32px')
@@ -29,13 +36,13 @@ test('parses padding props', t => {
 })
 
 test('parses margin props', t => {
-  const a = parse(space)({ m: 1 })
-  const b = parse(space)({ mt: 2 })
-  const c = parse(space)({ mr: 3 })
-  const d = parse(space)({ mb: 4 })
-  const e = parse(space)({ ml: 1 })
-  const f = parse(space)({ mx: 2 })
-  const g = parse(space)({ my: 3 })
+  const a = whitespace(space)({ m: 1 })
+  const b = whitespace(space)({ mt: 2 })
+  const c = whitespace(space)({ mr: 3 })
+  const d = whitespace(space)({ mb: 4 })
+  const e = whitespace(space)({ ml: 1 })
+  const f = whitespace(space)({ mx: 2 })
+  const g = whitespace(space)({ my: 3 })
   t.is(a, 'margin:8px')
   t.is(b, 'margin-top:16px')
   t.is(c, 'margin-right:32px')

@@ -16,10 +16,26 @@ const Button = styled.a`
   background-image: ${gradient(120, 'magenta', 'violet')};
   border-radius: 6px;
   appearance: none;
+  transition-property: transform, color;
+  transition-timing-function: ease-out;
+  transition-duration: .05s;
 
-  &:hover {}
-  &:focus {}
-  &:active {}
+  &:hover {
+    color: #000;
+    background-image: ${gradient(120, 'lime', 'cyan')};
+    transform: scale(${17/16});
+  }
+
+  &:focus {
+    outline: none;
+    transform: scale(${17/16});
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px ${colors.cyan}
+;
+  }
+
+  &:active {
+    transform: scale(${15/16});
+  }
 `
 
 export default Button

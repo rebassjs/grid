@@ -1,5 +1,5 @@
 
-# Grid Styled
+# [Grid Styled](http://jxnblk.com/grid-styled)
 
 Responsive React grid system built with [styled-components](https://github.com/styled-components/styled-components)
 
@@ -37,6 +37,12 @@ const App = () => (
     1/6
   ]}
 />
+
+// Fixed pixel width
+<Box width={256} />
+
+// CSS value width
+<Box width='40em' />
 ```
 
 ```jsx
@@ -146,11 +152,11 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 The Flex component extends the Box component and sets display flex.
 It also includes the following props:
 
-- `align`
-- `justify`
-- `order`
-- `wrap`
-- `column`
+- `align` (string) sets `align-items`
+- `justify` (string) sets `justify-content`
+- `order` (number) sets `order`
+- `wrap` (boolean) sets `flex-wrap: wrap`
+- `column` (boolean) sets `flex-direction: column`
 
 
 ## `<Grid />`

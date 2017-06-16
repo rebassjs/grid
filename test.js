@@ -6,7 +6,6 @@ import {
   Grid,
   Flex
 } from './src'
-import { breakpoints, space } from './src/constants'
 
 // Box
 test('Box renders', t => {

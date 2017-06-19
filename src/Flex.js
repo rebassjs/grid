@@ -8,13 +8,13 @@ const order = props => props.order ? `order:${props.order};` : null
 const wrap = props => props.wrap ? `flex-wrap:wrap;` : null
 const column = props => props.column ? `flex-direction:column;` : null
 
-const Flex = styled(Box)`
-  display: flex;
-  ${align}
-  ${justify}
-  ${order}
-  ${wrap}
-  ${column}
-`
+const Flex = styled(Box)([],
+  { display: 'flex' },
+  align,
+  justify,
+  order,
+  wrap,
+  column
+)
 
 export default Flex

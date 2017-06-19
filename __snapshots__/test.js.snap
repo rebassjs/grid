@@ -2,18 +2,18 @@
 
 exports[`Box renders 1`] = `
 <div
-  className="sc-bdVaJa eSZwuv"
+  className="sc-bdVaJa cahKXE"
 />
 `;
 
 exports[`Flex renders 1`] = `
 <div
-  className="sc-htpNat bxKUVX sc-bdVaJa bDvjNo"
+  className="sc-htpNat eLQHN sc-bdVaJa iHZvIS"
 />
 `;
 
 exports[`Grid renders 1`] = `
 <div
-  className="sc-bwzfXH emMKLe sc-bdVaJa bDvjNo"
+  className="sc-bwzfXH fIMJGd sc-bdVaJa iHZvIS"
 />
 `;

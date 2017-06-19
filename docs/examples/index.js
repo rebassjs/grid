@@ -7,6 +7,7 @@ import Aligned from './Aligned.jsx'
 import Grid from './Grid.jsx'
 import Negative from './Negative.jsx'
 import Flexbox from './Flexbox.jsx'
+import Auto from './Auto.jsx'
 import RasterSysteme from './RasterSysteme.jsx'
 import Movement from './Movement.jsx'
 import Offset from './Offset.jsx'
@@ -21,6 +22,7 @@ export default [
   InlineBlock,
   Aligned,
   Flexbox,
+  Auto,
   RasterSysteme,
   Movement,
   Offset,

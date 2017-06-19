@@ -6,11 +6,31 @@ import {
   Grid,
   Flex
 } from './src'
+import { flex } from './src/Box'
 
 // Box
 test('Box renders', t => {
   const json = render(<Box m={2} px={3} />).toJSON()
   t.snapshot(json)
+})
+
+test('Box renders with props', t => {
+  const json = render(<Box
+    m={[ 1, 2 ]}
+    px={[ 1, 2 ]}
+    w={1}
+    flex='1 1 auto'
+  />)
+})
+
+test('flex util returns null', t => {
+  const sx = flex({})
+  t.is(sx, null)
+})
+
+test('flex util returns a style object', t => {
+  const sx = flex({ flex: 'none' })
+  t.is(sx.flex, 'none')
 })
 
 // Grid

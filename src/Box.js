@@ -5,10 +5,13 @@ import { space, width } from 'styled-system'
 // hoc to remove unwanted width attribute
 const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />
 
+export const flex = props => props.flex ? ({ flex: props.flex }) : null
+
 const Box = hoc(styled.div([],
   { boxSizing: 'border-box' },
   width,
-  space
+  space,
+  flex
 ))
 
 export default Box

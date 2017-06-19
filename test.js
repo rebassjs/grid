@@ -21,6 +21,7 @@ test('Box renders with props', t => {
     w={1}
     flex='1 1 auto'
   />)
+  t.snapshot(json)
 })
 
 test('flex util returns null', t => {

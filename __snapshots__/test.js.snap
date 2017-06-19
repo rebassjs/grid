@@ -6,6 +6,12 @@ exports[`Box renders 1`] = `
 />
 `;
 
+exports[`Box renders with props 1`] = `
+<div
+  className="sc-bdVaJa johlaj"
+/>
+`;
+
 exports[`Flex renders 1`] = `
 <div
   className="sc-htpNat eLQHN sc-bdVaJa iHZvIS"

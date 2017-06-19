@@ -119,15 +119,19 @@ The Box component handles width, margin and padding.
 #### `width` (number|string|array)
 
 Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
-Pass an array to set different widths at different breakpoints.
+Pass an array to set different widths at different breakpoints for
+[responsive styles](#responsive-styles).
 
 #### Margin and Padding Props
 
-Both margin and padding props accept numbers or strings.
+Both margin and padding props accept numbers, strings, and arrays as values.
 Using a number from `0-4` will reference a step on the spacing scale.
 Larger numbers are converted to pixel values.
 Negative Numbers can be used to set negative margins and compensate for grid gutters.
 Strings are passed directly for other valid CSS values.
+
+Use array values to set different margin or padding values per breakpoint for
+[responsive styles](#responsive-styles).
 
 Margin and padding props follow a shorthand syntax for specifying direction.
 
@@ -165,6 +169,26 @@ The Grid component extends the Box component and sets display inline-block
 for an alternative to flexbox layout.
 
 
+## Responsive Styles
+
+Width, margin, and padding props accept arrays as values for mobile-first responsive styles,
+where the first value is for all breakpoints, then each value after is for a min-width
+media query from that breakpoint and up.
+The Box component uses [styled-system](https://github.com/jxnblk/styled-system) for these props.
+
+```jsx
+// 100% below the smallest breakpoint,
+// 50% from the next breakpoint and up,
+// and 25% from the next breakpoint and up
+<Box w={[ 1, 1/2, 1/4 ]} />
+
+// responsive margin
+<Box m={[ 1, 2, 3, 4 ]} />
+
+// responsive padding
+<Box p={[ 1, 2, 3, 4 ]} />
+```
+
 ## Theming
 
 Grid Styled uses smart defaults, but to customize the values,
@@ -201,7 +225,12 @@ To customize, provide an array of numbers that will be converted to ems.
 Grid Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
-The default scale is based on powers of two: `[ 0, 8, 16, 32, 64 ]`
+The default scale is based on an 8px/powers-of-two grid: `[ 0, 8, 16, 32, 64 ]`,
+which helps keep spacing consistent and elements aligned even when nesting components.
 
+### Related
+
+- [styled-system](https://github.com/jxnblk/styled-system)
+- [styled-components](https://github.com/styled-components/styled-components)
 
 MIT License

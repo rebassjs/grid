@@ -150,6 +150,13 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 - `px`: padding-left and padding-right
 - `py`: padding-top and padding-bottom
 
+#### `flex` (string)
+
+Sets the `flex` property.
+
+```jsx
+<Box flex='1 1 auto' />
+```
 
 ## `<Flex />`
 

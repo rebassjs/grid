@@ -1,6 +1,6 @@
 {
   "name": "grid-styled",
-  "version": "2.0.0-4",
+  "version": "2.0.0-5",
   "description": "Responsive React grid system built with styled-components",
   "main": "dist/index.js",
   "scripts": {

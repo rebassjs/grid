@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { space, width } from 'styled-system'
 
 // hoc to remove unwanted width attribute
-const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={width} />
+const hoc = Comp => ({ width, ...props }) => <Comp {...props} w={props.w || width} />
 
 export const flex = props => props.flex ? ({ flex: props.flex }) : null
 

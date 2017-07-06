@@ -44,6 +44,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "recompose": "^0.23.5",
     "styled-components": "^2.0.1",
     "styled-system": "^1.0.0-6"
   },

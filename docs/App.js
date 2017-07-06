@@ -30,6 +30,8 @@ const scope = {
   colors
 }
 
+const H2 = Box //.withComponent('h2')
+
 class App extends React.Component {
   render () {
     const {
@@ -42,6 +44,7 @@ class App extends React.Component {
 
     return (
       <div style={sx.root}>
+        <H2 width={1/2}>Hello</H2>
         <LiveProvider
           code={code}
           scope={scope}

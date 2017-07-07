@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "styled-components": "^2.0.1",
-    "styled-system": "^1.0.0-6"
+    "styled-system": "^1.0.0-8"
   },
   "ava": {
     "require": [

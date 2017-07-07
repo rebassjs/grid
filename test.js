@@ -51,3 +51,26 @@ test('Flex renders', t => {
   t.snapshot(flex)
 })
 
+test('Flex renders with props', t => {
+  const flex = render(
+    <Flex
+      wrap
+      direction='column'
+      align='center'
+      justify='space-between'
+    />
+  )
+  t.snapshot(flex)
+})
+
+test('Flex renders with responsive props', t => {
+  const flex = render(
+    <Flex
+      wrap={[ true, false ]}
+      direction={[ 'column', 'row' ]}
+      align={[ 'stretch', 'center' ]}
+      justify={[ 'space-between', 'center' ]}
+    />
+  )
+  t.snapshot(flex)
+})

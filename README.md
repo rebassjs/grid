@@ -150,7 +150,7 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 - `px`: padding-left and padding-right
 - `py`: padding-top and padding-bottom
 
-#### `flex` (string)
+#### `flex` (string|array)
 
 Sets the `flex` property.
 
@@ -158,16 +158,24 @@ Sets the `flex` property.
 <Box flex='1 1 auto' />
 ```
 
+#### `order` (number|string|array)
+
+Sets the `order` property.
+
+```jsx
+<Box order={2} />
+```
+
 ## `<Flex />`
 
 The Flex component extends the Box component and sets display flex.
 It also includes the following props:
 
-- `align` (string) sets `align-items`
-- `justify` (string) sets `justify-content`
-- `order` (number) sets `order`
-- `wrap` (boolean) sets `flex-wrap: wrap`
-- `column` (boolean) sets `flex-direction: column`
+- `align` (string|array) sets `align-items`
+- `justify` (string|array) sets `justify-content`
+- `direction` (string|array) sets `flex-direction`
+- `wrap` (boolean|array) sets `flex-wrap: wrap`
+- `column` (boolean) shortcut for `flex-direction: column`
 
 
 ## `<Grid />`
@@ -178,7 +186,7 @@ for an alternative to flexbox layout.
 
 ## Responsive Styles
 
-Width, margin, and padding props accept arrays as values for mobile-first responsive styles,
+Most props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
 The Box component uses [styled-system](https://github.com/jxnblk/styled-system) for these props.

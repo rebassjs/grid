@@ -18,6 +18,32 @@ exports[`Flex renders 1`] = `
 />
 `;
 
+exports[`Flex renders with props 1`] = `
+<div
+  className="sc-htpNat deySwf sc-bdVaJa iHZvIS"
+  direction="column"
+  wrap={true}
+/>
+`;
+
+exports[`Flex renders with responsive props 1`] = `
+<div
+  className="sc-htpNat acOuK sc-bdVaJa iHZvIS"
+  direction={
+    Array [
+      "column",
+      "row",
+    ]
+  }
+  wrap={
+    Array [
+      true,
+      false,
+    ]
+  }
+/>
+`;
+
 exports[`Grid renders 1`] = `
 <div
   className="sc-bwzfXH fIMJGd sc-bdVaJa iHZvIS"

@@ -12,5 +12,6 @@ const Golden = {
   A,
   B
 }
+Half.displayName = "Golden"
 
 export default Golden

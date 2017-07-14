@@ -1,6 +1,6 @@
 {
   "name": "grid-styled",
-  "version": "2.0.0-8",
+  "version": "2.0.0-9",
   "description": "Responsive React grid system built with styled-components",
   "main": "dist/index.js",
   "scripts": {
@@ -46,7 +46,7 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "styled-components": "^2.0.1",
-    "styled-system": "^1.0.0-8"
+    "styled-system": "^1.0.0-9"
   },
   "ava": {
     "require": [

@@ -32,6 +32,22 @@ const scope = {
 }
 
 class App extends React.Component {
+  componentDidMount () {
+    const { update } = this.props
+    document.body.addEventListener('keydown', e => {
+      console.log(e.key)
+      if (document.activeElement.tagName !== 'BODY') return
+      switch (e.key) {
+        case 'ArrowLeft':
+          update(dec)
+          break
+        case 'ArrowRight':
+          update(inc)
+          break
+      }
+    })
+  }
+
   render () {
     const {
       xray,

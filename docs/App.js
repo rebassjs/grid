@@ -9,6 +9,7 @@ import {
 } from 'react-live'
 import { createProvider } from 'funcup'
 import GS, { Flex, Box, Grid } from 'grid-styled'
+import Hide from 'hidden-styled'
 import { colors } from './styles'
 import Color from './Color'
 import Bar from './Bar'
@@ -16,6 +17,7 @@ import Button from './Button'
 import ArrowButton from './ArrowButton'
 import BaseButton from './BaseButton'
 import Footer from './Footer'
+import Tweet from './Tweet'
 import examples from './examples'
 import { inc, dec, toggleXRay } from './updaters'
 
@@ -59,11 +61,21 @@ class App extends React.Component {
 
     return (
       <div style={sx.root}>
-        <Flex align='center' style={sx.controls}>
-          <Btn href='https://github.com/jxnblk/grid-styled'>
-            GitHub
-          </Btn>
+        <Flex wrap align='center' style={sx.controls}>
+          <Hide xs>
+            <BaseButton
+              onClick={e => update({ index: 0 })}
+              children='Grid Styled'
+            />
+          </Hide>
+          <Hide xs>
+            <Btn href='https://github.com/jxnblk/grid-styled'>
+              GitHub
+            </Btn>
+          </Hide>
           <Box ml='auto' />
+            <Tweet />
+          <Box ml={2} />
           <BaseButton
             onClick={e => update(toggleXRay)}
             active={xray}

@@ -208,9 +208,11 @@ The Box component uses [styled-system](https://github.com/jxnblk/styled-system) 
 
 Using styled-components, you can customize any of the grid-styled components' styles.
 
-For example, to create an inline-flex component:
+
+### InlineFlex
 
 ```js
+// Example
 import styled from 'styled-components'
 import { Flex } from 'grid-styled'
 
@@ -219,11 +221,28 @@ const InlineFlex = styled(Flex)`
 `
 ```
 
-Components can also be extended with React.
+### Max-Width Container
 
-For example, this creates components for a grid with set gutters where the columns expand to fill in the space.
+```js
+// Example
+import styled from 'styled-components'
+import { Box } from 'grid-styled'
+
+const Container = styled(Box)`
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+`
+```
+
+
+### Auto Grid
+
+Components can also be extended with React.
+This example creates components for a grid with set gutters where the columns expand to fill in the space.
 
 ```jsx
+// Example
 import React from 'react'
 import { Flex, Box } from 'grid-styled'
 

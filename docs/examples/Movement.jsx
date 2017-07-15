@@ -1,4 +1,7 @@
-<Flex wrap align='center' justify='space-around'>
+<Flex
+  wrap
+  align='flex-end'
+  justify='space-around'>
   <Box p={2}>
     <Box p={4}>
       <h2 className='h2 m0'>Don’t</h2>

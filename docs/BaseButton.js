@@ -5,6 +5,8 @@ const BaseButton = styled.button`
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .2em;
   text-decoration: none;
   display: inline-flex;
   align-items: center;

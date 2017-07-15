@@ -9,12 +9,15 @@ import {
 } from 'react-live'
 import { createProvider } from 'funcup'
 import GS, { Flex, Box, Grid } from 'grid-styled'
+import Hide from 'hidden-styled'
 import { colors } from './styles'
 import Color from './Color'
 import Bar from './Bar'
 import Button from './Button'
 import ArrowButton from './ArrowButton'
 import BaseButton from './BaseButton'
+import Footer from './Footer'
+import Tweet from './Tweet'
 import examples from './examples'
 import { inc, dec, toggleXRay } from './updaters'
 
@@ -31,6 +34,22 @@ const scope = {
 }
 
 class App extends React.Component {
+  componentDidMount () {
+    const { update } = this.props
+    document.body.addEventListener('keydown', e => {
+      console.log(e.key)
+      if (document.activeElement.tagName !== 'BODY') return
+      switch (e.key) {
+        case 'ArrowLeft':
+          update(dec)
+          break
+        case 'ArrowRight':
+          update(inc)
+          break
+      }
+    })
+  }
+
   render () {
     const {
       xray,
@@ -42,6 +61,36 @@ class App extends React.Component {
 
     return (
       <div style={sx.root}>
+        <Flex wrap align='center' style={sx.controls}>
+          <Hide xs>
+            <BaseButton
+              onClick={e => update({ index: 0 })}
+              children='Grid Styled'
+            />
+          </Hide>
+          <Hide xs>
+            <Btn href='https://github.com/jxnblk/grid-styled'>
+              GitHub
+            </Btn>
+          </Hide>
+          <Box ml='auto' />
+            <Tweet />
+          <Box ml={2} />
+          <BaseButton
+            onClick={e => update(toggleXRay)}
+            active={xray}
+            children='X-Ray'
+          />
+          <ArrowButton
+            left
+            title='Previous'
+            onClick={e => update(dec)}
+          />
+          <ArrowButton
+            onClick={e => update(inc)}
+            title='Next'
+          />
+        </Flex>
         <LiveProvider
           code={code}
           scope={scope}
@@ -56,31 +105,9 @@ class App extends React.Component {
             </div>
           </XRay>
           <LiveError style={sx.error} />
-          <Flex align='center' style={sx.controls}>
-            <Btn href='https://github.com/jxnblk/grid-styled'>
-              GitHub
-            </Btn>
-            <Btn href='http://jxnblk.com'>
-              Made by Jxnblk
-            </Btn>
-            <Box ml='auto' />
-            <BaseButton
-              onClick={e => update(toggleXRay)}
-              active={xray}
-              children='X-Ray'
-            />
-            <ArrowButton
-              left
-              title='Previous'
-              onClick={e => update(dec)}
-            />
-            <ArrowButton
-              onClick={e => update(inc)}
-              title='Next'
-            />
-          </Flex>
           <LiveEditor style={sx.bottom} />
         </LiveProvider>
+        <Footer />
       </div>
     )
   }
@@ -99,8 +126,8 @@ const sx = {
     width: '100%'
   },
   controls: {
-    color: colors.teal,
-    backgroundColor: '#444',
+    color: colors.magenta,
+    backgroundColor: '#000',
     WebkitFontSmoothing: 'antialiased'
   },
   bottom: {
@@ -110,7 +137,7 @@ const sx = {
     margin: 0,
     padding: 16,
     overflow: 'auto',
-    color: colors.teal,
+    color: colors.cyan,
     backgroundColor: '#000',
     outline: 'none',
     WebkitFontSmoothing: 'antialiased'

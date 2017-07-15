@@ -303,7 +303,8 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ### Related
 
+- [Rebass](https://github.com/jxnblk/rebass)
 - [styled-system](https://github.com/jxnblk/styled-system)
 - [styled-components](https://github.com/styled-components/styled-components)
 
-MIT License
+[MIT License](LICENSE.md)

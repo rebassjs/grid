@@ -204,6 +204,45 @@ The Box component uses [styled-system](https://github.com/jxnblk/styled-system) 
 <Box p={[ 1, 2, 3, 4 ]} />
 ```
 
+## Extending Components
+
+Using styled-components, you can customize any of the grid-styled components' styles.
+
+For example, to create an inline-flex component:
+
+```js
+import styled from 'styled-components'
+import { Flex } from 'grid-styled'
+
+const InlineFlex = styled(Flex)`
+  display: inline-flex;
+`
+```
+
+Components can also be extended with React.
+
+For example, this creates components for a grid with set gutters where the columns expand to fill in the space.
+
+```jsx
+import React from 'react'
+import { Flex, Box } from 'grid-styled'
+
+const Row = props => (
+  <Flex
+    {...props}
+    mx={-3}
+  />
+)
+
+const Column = props => (
+  <Box
+    {...props}
+    px={3}
+    flex='1 1 auto'
+  />
+)
+```
+
 ## Theming
 
 Grid Styled uses smart defaults, but to customize the values,

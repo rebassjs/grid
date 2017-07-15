@@ -1,7 +1,9 @@
 
-# [Grid Styled](http://jxnblk.com/grid-styled)
+# Grid Styled
 
 Responsive React grid system built with [styled-components](https://github.com/styled-components/styled-components)
+
+http://jxnblk.com/grid-styled
 
 [![Build Status](https://travis-ci.org/jxnblk/grid-styled.svg?branch=master)](https://travis-ci.org/jxnblk/grid-styled)
 

@@ -12,6 +12,6 @@ const Golden = {
   A,
   B
 }
-Golden.displayName = "Golden"
+Golden.displayName = 'Golden'
 
 export default Golden

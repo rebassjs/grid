@@ -19,7 +19,7 @@ const Flex = styled(Box)([],
   align,
   justify,
 )
-Flex.displayName = "Flex"
+Flex.displayName = 'Flex'
 
 const responsivePropType = oneOfType([
   number,

@@ -14,6 +14,7 @@ const Box = styled.div([],
   flex,
   order
 )
+Box.displayName = 'Box'
 
 const responsivePropType = oneOfType([
   number,

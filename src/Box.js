@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { space, width, responsiveStyle } from 'styled-system'
 import { number, string, array, oneOfType } from 'prop-types'
+import tag from 'tag-hoc'
 import propTypes from './propTypes'
+import removeProps from './remove-props'
 
 export const flex = responsiveStyle('flex')
 export const order = responsiveStyle('order')
+
+const Tag = tag(removeProps)
 
 const Box = styled.div([],
   { boxSizing: 'border-box' },

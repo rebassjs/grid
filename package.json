@@ -47,7 +47,8 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "styled-components": "^2.0.1",
-    "styled-system": "^1.0.0-9"
+    "styled-system": "^1.0.0-9",
+    "tag-hoc": "^1.0.0-0"
   },
   "ava": {
     "require": [

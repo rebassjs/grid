@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "test": "ava",
+    "test": "nyc ava",
+    "cover": "nyc report --reporter=lcov --reporter=html",
     "start": "webpack-dev-server",
     "docs": "NODE_ENV=production webpack -p",
     "icon-dev": "repng docs/Icon.js --dev",
@@ -32,6 +33,7 @@
     "funcup": "^1.0.0-0",
     "hidden-styled": "^1.0.0-0",
     "html-webpack-plugin": "^2.24.0",
+    "nyc": "^11.0.3",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.3.2",

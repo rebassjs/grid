@@ -24,6 +24,12 @@ test('Box renders with props', t => {
   t.snapshot(json)
 })
 
+test('Box renders with `is` prop', t => {
+  const json = render(<Box is='section' />).toJSON()
+  t.snapshot(json)
+  t.is(json.type, 'section')
+})
+
 test('flex util returns null', t => {
   const sx = flex({})
   t.is(sx, null)
@@ -58,6 +64,15 @@ test('Flex renders with props', t => {
       direction='column'
       align='center'
       justify='space-between'
+    />
+  )
+  t.snapshot(flex)
+})
+
+test('Flex renders with column prop', t => {
+  const flex = render(
+    <Flex
+      column
     />
   )
   t.snapshot(flex)

@@ -168,6 +168,14 @@ Sets the `order` property.
 <Box order={2} />
 ```
 
+#### `is` (Component|string)
+
+Sets the underlying HTML element.
+
+```jsx
+<Box is='section' />
+```
+
 ## `<Flex />`
 
 The Flex component extends the Box component and sets display flex.

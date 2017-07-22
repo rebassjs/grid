@@ -3,49 +3,55 @@
 exports[`Box renders 1`] = `
 <div
   className="sc-bdVaJa cahKXE"
+  is={null}
+/>
+`;
+
+exports[`Box renders with \`is\` prop 1`] = `
+<section
+  className="sc-bdVaJa iHZvIS"
+  is={null}
 />
 `;
 
 exports[`Box renders with props 1`] = `
 <div
   className="sc-bdVaJa juTkkz"
+  is={null}
 />
 `;
 
 exports[`Flex renders 1`] = `
 <div
   className="sc-htpNat eLQHN sc-bdVaJa iHZvIS"
+  is={null}
+/>
+`;
+
+exports[`Flex renders with column prop 1`] = `
+<div
+  className="sc-htpNat pyeRb sc-bdVaJa iHZvIS"
+  is={null}
 />
 `;
 
 exports[`Flex renders with props 1`] = `
 <div
   className="sc-htpNat deySwf sc-bdVaJa iHZvIS"
-  direction="column"
-  wrap={true}
+  is={null}
 />
 `;
 
 exports[`Flex renders with responsive props 1`] = `
 <div
   className="sc-htpNat acOuK sc-bdVaJa iHZvIS"
-  direction={
-    Array [
-      "column",
-      "row",
-    ]
-  }
-  wrap={
-    Array [
-      true,
-      false,
-    ]
-  }
+  is={null}
 />
 `;
 
 exports[`Grid renders 1`] = `
 <div
   className="sc-bwzfXH fIMJGd sc-bdVaJa iHZvIS"
+  is={null}
 />
 `;

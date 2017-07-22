@@ -1,6 +1,6 @@
 <div>
   <Flex wrap>
-    <Box p={3} width={[ 1, 2/3, 1/2 ]}>
+    <Box is='header' p={3} width={[ 1, 2/3, 1/2 ]}>
       <h1 className='h0'>Grid Styled</h1>
       <Bar />
       <p className='h3 bold'>

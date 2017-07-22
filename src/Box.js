@@ -10,8 +10,9 @@ export const flex = responsiveStyle('flex')
 export const order = responsiveStyle('order')
 
 const Tag = tag(removeProps)
+const Base = Tag('div')
 
-const Box = styled.div([],
+const Box = styled(Base)([],
   { boxSizing: 'border-box' },
   width,
   space,

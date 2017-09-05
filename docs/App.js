@@ -8,7 +8,14 @@ import {
   LivePreview
 } from 'react-live'
 import { createProvider } from 'funcup'
-import GS, { Flex, Box, Grid } from 'grid-styled'
+import GS, {
+  Flex,
+  Box,
+  Grid,
+  Container,
+  Row,
+  Column
+} from 'grid-styled'
 import Hide from 'hidden-styled'
 import { colors } from './styles'
 import Color from './Color'
@@ -27,6 +34,9 @@ const scope = {
   Flex,
   Box,
   Grid,
+  Container,
+  Row,
+  Column,
   Color,
   Bar,
   Button,

@@ -11,8 +11,10 @@ import Auto from './Auto.jsx'
 import RasterSysteme from './RasterSysteme.jsx'
 import Movement from './Movement.jsx'
 import Offset from './Offset.jsx'
+import Bootstrap from './Bootstrap.jsx'
 
 export default [
+  Bootstrap,
   Hero,
   Space,
   Grid,

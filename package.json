@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
+    "recompose": "^0.25.0",
     "styled-components": "^2.0.1",
     "styled-system": "^1.0.0-9",
     "tag-hoc": "^1.0.0-0"

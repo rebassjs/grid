@@ -8,7 +8,7 @@ import {
   LivePreview
 } from 'react-live'
 import { createProvider } from 'funcup'
-import GS, { Flex, Box, Grid } from 'grid-styled'
+import GS, { Flex, Box, Layout, Grid } from 'grid-styled'
 import Hide from 'hidden-styled'
 import { colors } from './styles'
 import Color from './Color'
@@ -91,6 +91,13 @@ class App extends React.Component {
             title='Next'
           />
         </Flex>
+        <Layout p={3} w={1/2}>
+          <Box>Box</Box>
+          <Box>Box</Box>
+          <Box>Box</Box>
+          <Box>Box</Box>
+          <Box>Box</Box>
+        </Layout>
         <LiveProvider
           code={code}
           scope={scope}

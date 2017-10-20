@@ -1,8 +1,8 @@
 import React from 'react'
 import Grid from './Grid'
 
-export const φ = (1 + Math.sqrt(5)) / 2
-export const ga = φ - 1
+export const g = (1 + Math.sqrt(5)) / 2
+export const ga = g - 1
 export const gb = 1 - ga
 
 export const A = props => <Grid {...props} width={[ 1, ga ]} />

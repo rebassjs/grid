@@ -3,6 +3,7 @@
   "version": "2.0.0-11",
   "description": "Responsive React grid system built with styled-components",
   "main": "dist/index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "prepublish": "babel src -d dist",
     "test": "nyc ava",
@@ -23,6 +24,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^15.0.37",
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",

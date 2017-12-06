@@ -53,7 +53,7 @@
     "tag-hoc": "^1.0.0"
   },
   "peerDependencies": {
-    "styled-components": "^2.0.0",
+    "styled-components": "^2.0.0"
   },
   "ava": {
     "require": [

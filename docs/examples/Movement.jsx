@@ -1,5 +1,5 @@
 <Flex
-  wrap
+  flex-wrap
   align='flex-end'
   justify='space-around'>
   <Box p={2}>

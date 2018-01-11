@@ -5,7 +5,7 @@
   color='#fff'
   backgroundColor='#000'>
   <Box px={3} py={4}>
-    <Flex wrap mx={-3} py={4}>
+    <Flex flex-wrap mx={-3} py={4}>
       <Box p={3} width={[ 1/2, 1/3 ]}>
         <Bar />
         <h2 className='h2 xh0'>Negative</h2>

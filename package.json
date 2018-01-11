@@ -30,6 +30,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "funcup": "^1.0.0-1",
     "glamor": "^2.20.40",
     "hidden-styled": "^1.0.0-0",
@@ -49,11 +51,19 @@
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "styled-components": "^2.2.0",
+    "styled-components": "^2.4.0",
     "styled-system": "^1.0.2",
     "tag-hoc": "^1.0.0"
   },
+  "nyc": {
+    "exclude": [
+      "__test__/*.js"
+    ]
+  },
   "ava": {
+    "files": [
+      "__test__/*.js"
+    ],
     "require": [
       "babel-register"
     ],

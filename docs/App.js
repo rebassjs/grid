@@ -1,6 +1,6 @@
 import React from 'react'
 import XRay from 'react-x-ray'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import {
   LiveProvider,
   LiveError,
@@ -61,7 +61,7 @@ class App extends React.Component {
 
     return (
       <div style={sx.root}>
-        <Flex wrap align='center' style={sx.controls}>
+        <Flex flex-wrap align='center' style={sx.controls} isActive>
           <Hide xs>
             <BaseButton
               onClick={e => update({ index: 0 })}

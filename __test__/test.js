@@ -1,21 +1,24 @@
 import test from 'ava'
 import React from 'react'
-import { create as render } from 'react-test-renderer'
+import styled from 'styled-components'
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import {
   Box,
   Grid,
   Flex
-} from './src'
-import { flex } from './src/Box'
+} from '../src'
+import { flex } from '../src/Box'
+Enzyme.configure({ adapter: new Adapter() })
 
 // Box
 test('Box renders', t => {
-  const json = render(<Box m={2} px={3} />).toJSON()
+  const json = shallow(<Box m={2} px={3} />);
   t.snapshot(json)
 })
 
 test('Box renders with props', t => {
-  const json = render(<Box
+  const json = shallow(<Box
     m={[ 1, 2 ]}
     px={[ 1, 2 ]}
     w={1}
@@ -24,10 +27,18 @@ test('Box renders with props', t => {
   t.snapshot(json)
 })
 
-test('Box renders with `is` prop', t => {
-  const json = render(<Box is='section' />).toJSON()
+test('Box can be extended', t => {
+  const MyBox = styled(Box)`
+    background-color: ${props => props.isActive ? 'blue' : 'red'};
+  `;
+  const json = shallow(<MyBox
+    m={[ 1, 2 ]}
+    px={[ 1, 2 ]}
+    w={1}
+    flex='1 1 auto'
+    isActive
+  />)
   t.snapshot(json)
-  t.is(json.type, 'section')
 })
 
 test('flex util returns null', t => {
@@ -42,25 +53,25 @@ test('flex util returns a style object', t => {
 
 // Grid
 test('Grid renders', t => {
-  const grid = render(<Grid />)
+  const grid = shallow(<Grid />)
   t.snapshot(grid)
 })
 
 test('Grid has a classname', t => {
-  const div = render(<Grid />).toJSON()
-  t.truthy(div.props.className)
+  const div = shallow(<Grid />)
+  t.truthy(div.props().className)
 })
 
 // Flex
 test('Flex renders', t => {
-  const flex = render(<Flex />)
+  const flex = shallow(<Flex />)
   t.snapshot(flex)
 })
 
 test('Flex renders with props', t => {
-  const flex = render(
+  const flex = shallow(
     <Flex
-      wrap
+      flex-wrap
       direction='column'
       align='center'
       justify='space-between'
@@ -70,7 +81,7 @@ test('Flex renders with props', t => {
 })
 
 test('Flex renders with column prop', t => {
-  const flex = render(
+  const flex = shallow(
     <Flex
       column
     />
@@ -79,9 +90,9 @@ test('Flex renders with column prop', t => {
 })
 
 test('Flex renders with responsive props', t => {
-  const flex = render(
+  const flex = shallow(
     <Flex
-      wrap={[ true, false ]}
+      flex-wrap={[ true, false ]}
       direction={[ 'column', 'row' ]}
       align={[ 'stretch', 'center' ]}
       justify={[ 'space-between', 'center' ]}

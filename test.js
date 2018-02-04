@@ -1,12 +1,7 @@
 import test from 'ava'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import {
-  Box,
-  Grid,
-  Flex
-} from './src'
-import { flex } from './src/Box'
+import { Box, Flex, div } from './src'
 
 // Box
 test('Box renders', t => {
@@ -20,40 +15,13 @@ test('Box renders with props', t => {
     px={[ 1, 2 ]}
     w={1}
     flex='1 1 auto'
-  />)
+  />).toJSON()
   t.snapshot(json)
-})
-
-test('Box renders with `is` prop', t => {
-  const json = render(<Box is='section' />).toJSON()
-  t.snapshot(json)
-  t.is(json.type, 'section')
-})
-
-test('flex util returns null', t => {
-  const sx = flex({})
-  t.is(sx, null)
-})
-
-test('flex util returns a style object', t => {
-  const sx = flex({ flex: 'none' })
-  t.is(sx.flex, 'none')
-})
-
-// Grid
-test('Grid renders', t => {
-  const grid = render(<Grid />)
-  t.snapshot(grid)
-})
-
-test('Grid has a classname', t => {
-  const div = render(<Grid />).toJSON()
-  t.truthy(div.props.className)
 })
 
 // Flex
 test('Flex renders', t => {
-  const flex = render(<Flex />)
+  const flex = render(<Flex />).toJSON()
   t.snapshot(flex)
 })
 
@@ -65,16 +33,16 @@ test('Flex renders with props', t => {
       align='center'
       justify='space-between'
     />
-  )
+  ).toJSON()
   t.snapshot(flex)
 })
 
-test('Flex renders with column prop', t => {
+test('Flex renders with flexDirection prop', t => {
   const flex = render(
     <Flex
-      column
+      flexDirection='column'
     />
-  )
+  ).toJSON()
   t.snapshot(flex)
 })
 
@@ -82,10 +50,30 @@ test('Flex renders with responsive props', t => {
   const flex = render(
     <Flex
       wrap={[ true, false ]}
-      direction={[ 'column', 'row' ]}
+      flexDirection={[ 'column', 'row' ]}
       align={[ 'stretch', 'center' ]}
       justify={[ 'space-between', 'center' ]}
     />
-  )
+  ).toJSON()
   t.snapshot(flex)
+})
+
+// div
+test('div removes grid-styled props', t => {
+  const json = render(
+    React.createElement(div, {
+      id: 'hi',
+      className: 'beep',
+      width: .5,
+      color: 'blue',
+      fontSize: 4,
+      wrap: true
+    })
+  ).toJSON()
+  t.is(json.props.id, 'hi')
+  t.is(json.props.className, 'beep')
+  t.is(json.props.width, undefined)
+  t.is(json.props.color, undefined)
+  t.is(json.props.fontSize, undefined)
+  t.is(json.props.wrap, undefined)
 })

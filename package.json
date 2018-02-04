@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "styled-components": "^3.1.5",
+    "styled-components": ">=2.0 || >=3.0",
     "styled-system": "^1.1.1",
     "tag-hoc": "^1.0.0"
   },

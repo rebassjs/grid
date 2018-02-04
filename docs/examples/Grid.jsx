@@ -1,3 +1,4 @@
+export default `
 <Flex wrap className='bold'>
   <Box px={2} py={1} width={1/2}>
     <Bar />
@@ -84,3 +85,4 @@
     1/6
   </Box>
 </Flex>
+`

@@ -1,3 +1,4 @@
+export default `
 <Flex>
   <Box p={2}>
     <h2 className='h1 xh0'>Flex</h2>
@@ -8,3 +9,4 @@
     <Bar />
   </Box>
 </Flex>
+`

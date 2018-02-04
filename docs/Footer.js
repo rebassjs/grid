@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Flex,
   Box,
-} from 'grid-styled'
+} from '../src'
 import BaseButton from './BaseButton'
 
 const Btn = BaseButton.withComponent('a')

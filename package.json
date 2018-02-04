@@ -36,6 +36,8 @@
     "react-dom": "^16.2.0",
     "react-live": "^1.9.2",
     "react-test-renderer": "^16.2.0",
+    "react-x-ray": "^1.0.0-4",
+    "refunk": "^2.2.4",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1"
   },

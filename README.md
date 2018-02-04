@@ -202,9 +202,9 @@ media query from that breakpoint and up.
 The Box component uses [styled-system](https://github.com/jxnblk/styled-system) for these props.
 
 ```jsx
-// 100% below the smallest breakpoint,
-// 50% from the next breakpoint and up,
-// and 25% from the next breakpoint and up
+// 100% below the smallest breakpoint (mobile),
+// 50% from the next breakpoint and up (tablet),
+// and 25% from the next breakpoint and up (desktop)
 <Box w={[ 1, 1/2, 1/4 ]} />
 
 // responsive margin

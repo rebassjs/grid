@@ -2,6 +2,7 @@ import React from 'react'
 import { propTypes } from 'styled-system'
 
 const blacklist = [
+  'theme',
   ...Object.keys({
     ...propTypes.space,
     ...propTypes.width,

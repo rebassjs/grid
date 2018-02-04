@@ -5,7 +5,10 @@ Responsive React grid system built with [styled-components](https://github.com/s
 
 http://jxnblk.com/grid-styled
 
-[![Build Status](https://travis-ci.org/jxnblk/grid-styled.svg?branch=master)](https://travis-ci.org/jxnblk/grid-styled)
+[![Build Status][build-badge]][build-status]
+
+[build-badge]: https://img.shields.io/travis/jxnblk/grid-styled/master.svg?style=flat-square
+[build-status]: https://travis-ci.org/jxnblk/grid-styled
 
 ## Getting Started
 
@@ -101,16 +104,6 @@ const App = () => (
 <Box mx={-2} />
 ```
 
-```jsx
-// Display inline-block grid
-import { Grid } from 'grid-styled'
-
-<div>
-  <Grid width={1/2}>Half</Grid>
-  <Grid width={1/2}>Half</Grid>
-</div>
-```
-
 
 ## `<Box />`
 
@@ -168,14 +161,6 @@ Sets the `order` property.
 <Box order={2} />
 ```
 
-#### `is` (Component|string)
-
-Sets the underlying HTML element.
-
-```jsx
-<Box is='section' />
-```
-
 ## `<Flex />`
 
 The Flex component extends the Box component and sets display flex.
@@ -185,13 +170,6 @@ It also includes the following props:
 - `justify` (string|array) sets `justify-content`
 - `direction` (string|array) sets `flex-direction`
 - `wrap` (boolean|array) sets `flex-wrap: wrap`
-- `column` (boolean) shortcut for `flex-direction: column`
-
-
-## `<Grid />`
-
-The Grid component extends the Box component and sets display inline-block
-for an alternative to flexbox layout.
 
 
 ## Responsive Styles
@@ -240,9 +218,10 @@ import { Box } from 'grid-styled'
 
 const Container = styled(Box)`
   max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
 `
+Container.defaultProps = {
+  mx: 'auto'
+}
 ```
 
 
@@ -285,7 +264,7 @@ const App = () => (
   <ThemeProvider
     theme={{
       space: [ 0, 6, 12, 18, 24 ],
-      breakpoints: [ 32, 48, 64 ]
+      breakpoints: [ '32em', '48em', '64em' ]
     }}>
     <div>
       <Grid>Grid with custom spacing scale and breakpoints</Grid>
@@ -308,13 +287,13 @@ To customize, provide an array of numbers that will be converted to ems.
 Grid Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
-The default scale is based on an 8px/powers-of-two grid: `[ 0, 8, 16, 32, 64 ]`,
+The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,
 which helps keep spacing consistent and elements aligned even when nesting components.
 
 ### Related
 
-- [Rebass](https://github.com/jxnblk/rebass)
 - [styled-system](https://github.com/jxnblk/styled-system)
+- [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components](https://github.com/styled-components/styled-components)
 
 [MIT License](LICENSE.md)

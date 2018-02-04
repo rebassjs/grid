@@ -1,3 +1,4 @@
+export default `
 <Color
   style={{
     minHeight: '70vh'
@@ -17,3 +18,4 @@
     </Flex>
   </Box>
 </Color>
+`

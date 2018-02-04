@@ -1,35 +1,44 @@
-import React from 'react'
 import styled from 'styled-components'
-import { space, width, responsiveStyle } from 'styled-system'
-import { number, string, array, oneOfType } from 'prop-types'
-import tag from 'tag-hoc'
-import propTypes from './propTypes'
-import removeProps from './remove-props'
+import {
+  space,
+  width,
+  flex,
+  color,
+  fontSize,
+  responsiveStyle,
+  propTypes
+} from 'styled-system'
+import div from './div'
+import theme from './theme'
 
-export const flex = responsiveStyle('flex')
-export const order = responsiveStyle('order')
+export const order = responsiveStyle({
+  prop: 'order'
+})
 
-const Tag = tag(removeProps)
-const Base = Tag('div')
-
-const Box = styled(Base)([],
+const Box = styled(div)([],
   { boxSizing: 'border-box' },
   width,
   space,
+  fontSize,
+  color,
   flex,
   order
 )
+
 Box.displayName = 'Box'
 
-const responsivePropType = oneOfType([
-  number,
-  string,
-  array
-])
+Box.defaultProps = {
+  theme
+}
 
-Box.propTypes = Object.assign({}, propTypes, {
-  flex: responsivePropType,
-  order: responsivePropType
-})
+Box.propTypes = {
+  ...propTypes.width,
+  ...propTypes.space,
+  ...propTypes.fontSize,
+  ...propTypes.color,
+  ...propTypes.flex,
+  // hack: the propTypes object should export the responsive type
+  order: propTypes.width.width
+}
 
 export default Box

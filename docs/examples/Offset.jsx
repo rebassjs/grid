@@ -1,3 +1,4 @@
+export default `
 <div className='bold'>
   <Flex>
     <Box width={1/4} ml='25%' px={2} py={1}>
@@ -28,3 +29,4 @@
     </Box>
   </Flex>
 </div>
+`

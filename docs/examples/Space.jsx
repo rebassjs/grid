@@ -1,3 +1,4 @@
+export default `
 <Flex wrap align='center'>
   <Box p={4} width={[1, 2/3, null, 1/2 ]}>
     <Bar />
@@ -13,3 +14,4 @@
     <span>Jan Tschichold</span>
   </Box>
 </Flex>
+`

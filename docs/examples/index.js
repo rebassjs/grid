@@ -2,7 +2,6 @@ import Hero from './Hero.jsx'
 import Space from './Space.jsx'
 import Golden from './Golden.jsx'
 import Consistent from './Consistent.jsx'
-import InlineBlock from './InlineBlock.jsx'
 import Aligned from './Aligned.jsx'
 import Grid from './Grid.jsx'
 import Negative from './Negative.jsx'
@@ -19,7 +18,6 @@ export default [
   Golden,
   Negative,
   Consistent,
-  InlineBlock,
   Aligned,
   Flexbox,
   Auto,

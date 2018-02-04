@@ -1,3 +1,4 @@
+export default `
 <Flex
   wrap
   align='flex-end'
@@ -21,3 +22,4 @@
     <Bar />
   </Box>
 </Flex>
+`

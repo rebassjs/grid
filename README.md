@@ -1,7 +1,8 @@
 
 # Grid Styled
 
-Responsive React grid system built with [styled-components](https://github.com/styled-components/styled-components)
+Responsive React grid system built with
+[styled-components][sc] and [styled-system][system]
 
 http://jxnblk.com/grid-styled
 
@@ -177,7 +178,7 @@ It also includes the following props:
 Most props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
-The Box component uses [styled-system](https://github.com/jxnblk/styled-system) for these props.
+The Box component uses [styled-system][system] for these props.
 
 ```jsx
 // 100% below the smallest breakpoint,
@@ -273,16 +274,15 @@ const App = () => (
 )
 ```
 
-### Breakpoints
+**Breakpoints**
 
 The Grid component uses a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
 Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
-To customize, provide an array of numbers that will be converted to ems.
+To customize, provide an array of string values that will be converted to media queries.
 
-
-### Spacing Scale
+**Spacing Scale**
 
 Grid Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
@@ -292,8 +292,11 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ### Related
 
-- [styled-system](https://github.com/jxnblk/styled-system)
+- [styled-system][system]
 - [Rebass](https://github.com/jxnblk/rebass)
-- [styled-components](https://github.com/styled-components/styled-components)
+- [styled-components][sc]
+
+[sc]: https://github.com/styled-components/styled-components
+[system]: https://github.com/jxnblk/styled-system
 
 [MIT License](LICENSE.md)

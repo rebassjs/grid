@@ -11,6 +11,7 @@ import connect from 'refunk'
 import GS, { Flex, Box } from '../src'
 import CSS from './CSS'
 import GA from './GA'
+import Twitter from './Twitter'
 import { colors } from './styles'
 import Color from './Color'
 import Bar from './Bar'
@@ -120,6 +121,7 @@ const App = connect(class extends React.Component {
             <Footer />
           </div>
           <GA />
+          <Twitter />
         </body>
       </React.Fragment>
     )

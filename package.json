@@ -8,7 +8,7 @@
     "test": "nyc ava",
     "cover": "nyc report --reporter=lcov --reporter=html",
     "start": "x0 dev docs/App.js",
-    "docs": "x0 build docs/App.js -d docs",
+    "docs": "x0 build docs/App.js -d docs --cssLibrary='styled-components' --basename='/docs'",
     "icon-dev": "repng docs/Icon.js --dev",
     "icon": "repng docs/Icon.js -d 2000 -w 768 -h 768 -o docs -f icon"
   },

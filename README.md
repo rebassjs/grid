@@ -169,7 +169,7 @@ It also includes the following props:
 
 - `align` (string|array) sets `align-items`
 - `justify` (string|array) sets `justify-content`
-- `direction` (string|array) sets `flex-direction`
+- `flexDirection` (string|array) sets `flex-direction`
 - `wrap` (boolean|array) sets `flex-wrap: wrap`
 
 

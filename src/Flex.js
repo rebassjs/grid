@@ -21,7 +21,8 @@ Flex.propTypes = {
   ...propTypes.flexWrap,
   ...propTypes.flexDirection,
   ...propTypes.alignItems,
-  ...propTypes.justifyContent
+  ...propTypes.justifyContent,
+  ...Box.propTypes
 }
 
 export default Flex

@@ -28,14 +28,25 @@ const omit = (obj, keys) => {
 }
 
 class div extends React.Component {
+  static styledComponentId = 'lol'
+
+  static defaultProps = {
+    is: 'div'
+  }
+
   render () {
-    const { innerRef, ...props } = this.props
+    const {
+      is,
+      innerRef,
+      ...props
+    } = this.props
     const attr = omit(props, blacklist)
-    return <div ref={innerRef} {...attr} />
+
+    return React.createElement(is, {
+      ref: innerRef,
+      ...attr
+    })
   }
 }
-
-// Trick styled-components into passing innerRef
-div.styledComponentId = 'lol'
 
 export default div

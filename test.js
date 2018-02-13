@@ -77,3 +77,12 @@ test('div removes grid-styled props', t => {
   t.is(json.props.fontSize, undefined)
   t.is(json.props.wrap, undefined)
 })
+
+test('div accepts an is prop to change elements', t => {
+  const json = render(
+    React.createElement(div, {
+      is: 'h2'
+    })
+  ).toJSON()
+  t.is(json.type, 'h2')
+})

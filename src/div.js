@@ -3,6 +3,7 @@ import { propTypes } from 'styled-system'
 
 const blacklist = [
   'theme',
+  'innerRef',
   ...Object.keys({
     ...propTypes.space,
     ...propTypes.width,
@@ -26,10 +27,26 @@ const omit = (obj, keys) => {
   return next
 }
 
-const div = props =>
-  <div
-    ref={props.innerRef}
-    {...omit(props, blacklist)}
-  />
+class div extends React.Component {
+  static styledComponentId = 'lol'
+
+  static defaultProps = {
+    is: 'div'
+  }
+
+  render () {
+    const {
+      is,
+      innerRef,
+      ...props
+    } = this.props
+    const attr = omit(props, blacklist)
+
+    return React.createElement(is, {
+      ref: innerRef,
+      ...attr
+    })
+  }
+}
 
 export default div

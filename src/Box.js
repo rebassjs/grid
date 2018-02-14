@@ -11,9 +11,7 @@ import {
 import div from './div'
 import theme from './theme'
 
-export const order = responsiveStyle({
-  prop: 'order'
-})
+export const order = responsiveStyle('order')
 
 const Box = styled(div)([],
   { boxSizing: 'border-box' },

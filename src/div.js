@@ -1,3 +1,4 @@
+// deprecated - see https://github.com/jxnblk/styled-system/tree/master/clean-tag
 import React from 'react'
 import { propTypes } from 'styled-system'
 

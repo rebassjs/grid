@@ -6,7 +6,6 @@ import {
   color,
   fontSize,
   order,
-  propTypes
 } from 'styled-system'
 import tag from 'clean-tag'
 import theme from './theme'

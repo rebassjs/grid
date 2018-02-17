@@ -5,18 +5,12 @@ import {
   flex,
   color,
   fontSize,
-  responsiveStyle,
-  propTypes
+  order,
 } from 'styled-system'
-import div from './div'
+import tag from 'clean-tag'
 import theme from './theme'
 
-export const order = responsiveStyle({
-  prop: 'order',
-  cssProperty: 'order'
-})
-
-const Box = styled(div)([],
+const Box = styled(tag)([],
   { boxSizing: 'border-box' },
   width,
   space,
@@ -33,13 +27,12 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
-  ...propTypes.width,
-  ...propTypes.space,
-  ...propTypes.fontSize,
-  ...propTypes.color,
-  ...propTypes.flex,
-  // hack: the propTypes object should export the responsive type
-  order: propTypes.width.width
+  ...width.propTypes,
+  ...space.propTypes,
+  ...fontSize.propTypes,
+  ...color.propTypes,
+  ...flex.propTypes,
+  ...order.propTypes,
 }
 
 export default Box

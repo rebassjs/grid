@@ -3,7 +3,6 @@ import {
   flexDirection,
   alignItems,
   justifyContent,
-  propTypes
 } from 'styled-system'
 import Box from './Box'
 
@@ -18,10 +17,10 @@ const Flex = Box.extend([],
 Flex.displayName = 'Flex'
 
 Flex.propTypes = {
-  ...propTypes.flexWrap,
-  ...propTypes.flexDirection,
-  ...propTypes.alignItems,
-  ...propTypes.justifyContent
+  ...flexWrap.propTypes,
+  ...flexDirection.propTypes,
+  ...alignItems.propTypes,
+  ...justifyContent.propTypes
 }
 
 export default Flex

@@ -1,5 +1,5 @@
 export default `
-<Flex wrap align='center'>
+<Flex flexWrap='wrap' alignItems='center'>
   <Box p={4} width={[1, 2/3, null, 1/2 ]}>
     <Bar />
     <p className='h3 xh2 bold'>

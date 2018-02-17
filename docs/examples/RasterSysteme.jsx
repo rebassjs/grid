@@ -1,5 +1,5 @@
 export default `
-<Flex column>
+<Flex flexDirection='column'>
   <Box px={2} width={[ 2/3, 1/2 ]}>
     <h2 className='h2 xh0'>Raster</h2>
     <Bar />

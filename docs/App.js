@@ -76,7 +76,10 @@ const App = connect(class extends React.Component {
         </head>
         <body>
           <div style={sx.root}>
-            <Flex wrap align='center' style={sx.controls}>
+            <Flex
+              flexWrap='wrap'
+              alignItems='center'
+              style={sx.controls}>
               <BaseButton
                 onClick={e => update({ index: 0 })}
                 children='Grid Styled'

@@ -112,6 +112,9 @@ The Box component handles width, margin and padding.
 
 ### Props
 
+All grid-styled components use [styled-system][system] for style props,
+which pick up values from a [theme](#theming) and allow for responsive styles to be passed as [array values](#responsive-styles).
+
 #### `width` (number|string|array)
 
 Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
@@ -167,10 +170,10 @@ Sets the `order` property.
 The Flex component extends the Box component and sets display flex.
 It also includes the following props:
 
-- `align` (string|array) sets `align-items`
-- `justify` (string|array) sets `justify-content`
+- `alignItems` (string|array) sets `align-items`
+- `justifyContent` (string|array) sets `justify-content`
 - `flexDirection` (string|array) sets `flex-direction`
-- `wrap` (boolean|array) sets `flex-wrap: wrap`
+- `flexWrap` (string|array) sets `flex-wrap: wrap`
 
 
 ## Responsive Styles

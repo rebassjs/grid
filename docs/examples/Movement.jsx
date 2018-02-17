@@ -1,8 +1,8 @@
 export default `
 <Flex
-  wrap
-  align='flex-end'
-  justify='space-around'>
+  flexWrap='wrap'
+  alignItems='flex-end'
+  justifyContent='space-around'>
   <Box p={2}>
     <Box p={4}>
       <h2 className='h2 m0'>Don’t</h2>

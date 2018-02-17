@@ -42,8 +42,9 @@
     "repng": "^2.0.0-alpha.1"
   },
   "dependencies": {
+    "clean-tag": "^1.0.2",
     "styled-components": ">=2.0 || >=3.0",
-    "styled-system": "^1.1.1"
+    "styled-system": ">=2.0.2"
   },
   "ava": {
     "require": [

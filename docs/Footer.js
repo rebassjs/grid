@@ -8,7 +8,7 @@ import BaseButton from './BaseButton'
 const Btn = BaseButton.withComponent('a')
 
 const Footer = () => (
-  <Flex align='center'>
+  <Flex alignItems='center'>
     <Btn href='http://jxnblk.com'>
       Made by Jxnblk
     </Btn>

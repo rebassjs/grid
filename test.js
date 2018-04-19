@@ -15,6 +15,7 @@ test('Box renders with props', t => {
     px={[ 1, 2 ]}
     w={1}
     flex='1 1 auto'
+    alignSelf='flex-start'
   />).toJSON()
   t.snapshot(json)
 })

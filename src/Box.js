@@ -6,6 +6,7 @@ import {
   color,
   fontSize,
   order,
+  alignSelf
 } from 'styled-system'
 import tag from 'clean-tag'
 import theme from './theme'
@@ -17,7 +18,8 @@ const Box = styled(tag)([],
   fontSize,
   color,
   flex,
-  order
+  order,
+  alignSelf
 )
 
 Box.displayName = 'Box'
@@ -33,6 +35,7 @@ Box.propTypes = {
   ...color.propTypes,
   ...flex.propTypes,
   ...order.propTypes,
+  ...alignSelf.propTypes
 }
 
 export default Box

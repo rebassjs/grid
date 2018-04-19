@@ -165,6 +165,14 @@ Sets the `order` property.
 <Box order={2} />
 ```
 
+#### `alignSelf` (string|array)
+
+Sets the `align-self` property.
+
+```jsx
+<Box alignSelf='flex-end' />
+```
+
 ## `<Flex />`
 
 The Flex component extends the Box component and sets display flex.

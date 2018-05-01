@@ -1,5 +1,5 @@
 
-# Grid Styled
+# Grid-Styled
 
 Responsive React grid system built with
 [styled-components][sc] and [styled-system][system]
@@ -265,12 +265,13 @@ const Column = props => (
 
 ## Theming
 
-Grid Styled uses smart defaults, but to customize the values,
+Grid-Styled uses smart defaults, but to customize the values,
 use styled-components’ `ThemeProvider` component.
 
 ```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { Box } from 'grid-styled'
 
 const App = () => (
   <ThemeProvider
@@ -279,7 +280,7 @@ const App = () => (
       breakpoints: [ '32em', '48em', '64em' ]
     }}>
     <div>
-      <Grid>Grid with custom spacing scale and breakpoints</Grid>
+      <Box width={[1, 1/2, 1/4]} px={2}>Box with custom spacing scale and breakpoints</Box>
     </div>
   </ThemeProvider>
 )
@@ -287,7 +288,7 @@ const App = () => (
 
 **Breakpoints**
 
-The Grid component uses a mobile-first responsive approach,
+The Flex and Box components use a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
 Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
@@ -295,7 +296,7 @@ To customize, provide an array of string values that will be converted to media 
 
 **Spacing Scale**
 
-Grid Styled components' margin and padding props use a 4 step spacing scale to help
+Grid-Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,

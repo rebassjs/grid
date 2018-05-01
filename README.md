@@ -304,10 +304,12 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ### Related
 
+- [styled-space][ssp]
 - [styled-system][system]
 - [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components][sc]
 
+[ssp]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
 [sc]: https://github.com/styled-components/styled-components
 [system]: https://github.com/jxnblk/styled-system
 

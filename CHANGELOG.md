@@ -6,7 +6,7 @@
 
 ## [v.4.1.0] - 2018-04-17
 
-+ support `align-self` property on Box
++ support `alignSelf` property on Box
 
 ## [v.4.0.0] - 2018-04-13
 

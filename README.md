@@ -302,7 +302,27 @@ keep things aligned and keep layouts consistent.
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,
 which helps keep spacing consistent and elements aligned even when nesting components.
 
-### Related
+
+## Styled-Space
+
+Grid-Styled works nicely together with [styled-space](ssp):
+
+```jsx
+import React from 'react'
+import { Flex, Box } from 'grid-styled'
+import Space from 'styled-space'
+
+const App = props => (
+  <Flex>
+    <Space mx={3}>
+      <h1>Hello</h1>
+      <Box>Beep</Box>
+    </Space>
+  </Flex>
+)
+```
+
+## Related
 
 - [styled-space][ssp]
 - [styled-system][system]

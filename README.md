@@ -312,7 +312,7 @@ import React from 'react'
 import { Flex, Box } from 'grid-styled'
 import Space from 'styled-space'
 
-const App = props => (
+const App = () => (
   <Flex>
     <Space mx={3}>
       <h1>Hello</h1>

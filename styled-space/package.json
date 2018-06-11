@@ -2,7 +2,7 @@
   "name": "styled-space",
   "version": "1.0.0",
   "description": "React component for applying responsive margin and padding to child elements without a wrapping HTML container. Built with styled-components and styled-system.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
     "test": "nyc ava"

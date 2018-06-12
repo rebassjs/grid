@@ -1,5 +1,5 @@
 
-# Grid-Styled
+# Grid Styled
 
 Responsive React grid system built with
 [styled-components][sc] and [styled-system][system]
@@ -208,7 +208,6 @@ The Box component uses [styled-system][system] for these props.
 
 Using styled-components, you can customize any of the grid-styled components' styles.
 
-
 ### InlineFlex
 
 ```js
@@ -265,7 +264,7 @@ const Column = props => (
 
 ## Theming
 
-Grid-Styled uses smart defaults, but to customize the values,
+Grid Styled uses smart defaults, but to customize the values,
 use styled-components’ `ThemeProvider` component.
 
 ```jsx
@@ -296,16 +295,15 @@ To customize, provide an array of string values that will be converted to media 
 
 **Spacing Scale**
 
-Grid-Styled components' margin and padding props use a 4 step spacing scale to help
+Grid Styled components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,
 which helps keep spacing consistent and elements aligned even when nesting components.
 
+## Styled Space
 
-## Styled-Space
-
-Grid-Styled works nicely together with [styled-space](ssp):
+Grid Styled works nicely together with [styled-space](ssp):
 
 ```jsx
 import React from 'react'

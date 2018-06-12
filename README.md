@@ -124,7 +124,7 @@ Pass an array to set different widths at different breakpoints for
 #### Margin and Padding Props
 
 Both margin and padding props accept numbers, strings, and arrays as values.
-Using a number from `0-4` will reference a step on the spacing scale.
+Using a number from `0-8` (i.e. an index of `theme.space`) will reference a step on the spacing scale.
 Larger numbers are converted to pixel values.
 Negative Numbers can be used to set negative margins and compensate for grid gutters.
 Strings are passed directly for other valid CSS values.

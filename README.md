@@ -303,7 +303,7 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ## Styled Space
 
-Grid Styled works nicely together with [styled-space](ssp):
+Grid Styled works nicely together with [styled-space][ssp]:
 
 ```jsx
 import React from 'react'

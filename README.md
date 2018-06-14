@@ -208,7 +208,6 @@ The Box component uses [styled-system][system] for these props.
 
 Using styled-components, you can customize any of the grid-styled components' styles.
 
-
 ### InlineFlex
 
 ```js
@@ -271,6 +270,7 @@ use styled-components’ `ThemeProvider` component.
 ```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { Box } from 'grid-styled'
 
 const App = () => (
   <ThemeProvider
@@ -279,7 +279,7 @@ const App = () => (
       breakpoints: [ '32em', '48em', '64em' ]
     }}>
     <div>
-      <Grid>Grid with custom spacing scale and breakpoints</Grid>
+      <Box width={[1, 1/2, 1/4]} px={2}>Box with custom spacing scale and breakpoints</Box>
     </div>
   </ThemeProvider>
 )
@@ -287,7 +287,7 @@ const App = () => (
 
 **Breakpoints**
 
-The Grid component uses a mobile-first responsive approach,
+The Flex and Box components use a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
 Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
@@ -301,12 +301,33 @@ keep things aligned and keep layouts consistent.
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,
 which helps keep spacing consistent and elements aligned even when nesting components.
 
-### Related
+## Styled Space
 
+Grid Styled works nicely together with [styled-space](ssp):
+
+```jsx
+import React from 'react'
+import { Flex, Box } from 'grid-styled'
+import Space from 'styled-space'
+
+const App = () => (
+  <Flex>
+    <Space mx={3}>
+      <h1>Hello</h1>
+      <Box>Beep</Box>
+    </Space>
+  </Flex>
+)
+```
+
+## Related
+
+- [styled-space][ssp]
 - [styled-system][system]
 - [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components][sc]
 
+[ssp]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
 [sc]: https://github.com/styled-components/styled-components
 [system]: https://github.com/jxnblk/styled-system
 

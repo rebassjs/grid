@@ -3,5 +3,22 @@
     "env",
     "stage-0",
     "react"
-  ]
+  ],
+  "ignore": [
+    "./src/emotion-styled"
+  ],
+  "env": {
+    "emotion": {
+      "ignore": null,
+      "plugins": [
+        [
+          "transform-rename-import",
+          {
+            "original": "styled-components",
+            "replacement": "./emotion-styled"
+          }
+        ]
+      ]
+    }
+  }
 }

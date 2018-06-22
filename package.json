@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "test": "nyc ava",
-    "cover": "nyc report --reporter=lcov --reporter=html",
+    "test": "jest",
     "start": "x0 dev docs/App.js",
     "docs": "x0 build docs/App.js -d docs --cssLibrary='styled-components' --basename='/grid-styled'",
     "icon-dev": "repng docs/Icon.js --dev",
@@ -25,13 +24,13 @@
   "license": "MIT",
   "devDependencies": {
     "@compositor/x0": "^3.1.1",
-    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
-    "nyc": "^11.4.1",
+    "jest": "^23.1.0",
+    "jest-styled-components": "^5.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-live": "^1.9.2",
@@ -49,10 +48,9 @@
   "peerDependencies": {
     "styled-components": ">=2.0 || >=3.0"
   },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
   }
 }

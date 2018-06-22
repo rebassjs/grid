@@ -1,15 +1,17 @@
-import test from 'ava'
+import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import { Box, Flex } from './src'
+import { Box, Flex } from '../src'
+
+const renderJSON = el => render(el).toJSON()
 
 // Box
-test('Box renders', t => {
+test('Box renders', () => {
   const json = render(<Box m={2} px={3} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('Box renders with props', t => {
+test('Box renders with props', () => {
   const json = render(<Box
     m={[ 1, 2 ]}
     px={[ 1, 2 ]}
@@ -17,17 +19,17 @@ test('Box renders with props', t => {
     flex='1 1 auto'
     alignSelf='flex-start'
   />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
 // Flex
-test('Flex renders', t => {
-  const flex = render(<Flex />).toJSON()
-  t.snapshot(flex)
+test('Flex renders', () => {
+  const json = render(<Flex />).toJSON()
+  expect(json).toMatchSnapshot()
 })
 
-test('Flex renders with props', t => {
-  const flex = render(
+test('Flex renders with props', () => {
+  const json = render(
     <Flex
       flexWrap='wrap'
       flexDirection='column'
@@ -35,11 +37,11 @@ test('Flex renders with props', t => {
       justifyContent='space-between'
     />
   ).toJSON()
-  t.snapshot(flex)
+  expect(json).toMatchSnapshot()
 })
 
-test('Flex renders with legacy props', t => {
-  const flex = render(
+test('Flex renders with legacy props', () => {
+  const json = render(
     <Flex
       wrap
       flexDirection='column'
@@ -47,20 +49,20 @@ test('Flex renders with legacy props', t => {
       justify='space-between'
     />
   ).toJSON()
-  t.snapshot(flex)
+  expect(json).toMatchSnapshot()
 })
 
-test('Flex renders with flexDirection prop', t => {
-  const flex = render(
+test('Flex renders with flexDirection prop', () => {
+  const json = render(
     <Flex
       flexDirection='column'
     />
   ).toJSON()
-  t.snapshot(flex)
+  expect(json).toMatchSnapshot()
 })
 
-test('Flex renders with responsive props', t => {
-  const flex = render(
+test('Flex renders with responsive props', () => {
+  const json = render(
     <Flex
       wrap={[ true, false ]}
       flexDirection={[ 'column', 'row' ]}
@@ -68,11 +70,11 @@ test('Flex renders with responsive props', t => {
       justify={[ 'space-between', 'center' ]}
     />
   ).toJSON()
-  t.snapshot(flex)
+  expect(json).toMatchSnapshot()
 })
 
 // clean-tag
-test('Box removes grid-styled props', t => {
+test('Box removes grid-styled props', () => {
   const json = render(
     React.createElement(Box, {
       id: 'hi',
@@ -83,18 +85,18 @@ test('Box removes grid-styled props', t => {
       flexWrap: 'wrap'
     })
   ).toJSON()
-  t.is(json.props.id, 'hi')
-  t.is(json.props.width, undefined)
-  t.is(json.props.color, undefined)
-  t.is(json.props.fontSize, undefined)
-  t.is(json.props.wrap, undefined)
+  expect(json.props.id).toBe('hi')
+  expect(json.props.width).toBe(undefined)
+  expect(json.props.color).toBe(undefined)
+  expect(json.props.fontSize).toBe(undefined)
+  expect(json.props.wrap).toBe(undefined)
 })
 
-test('Box accepts an is prop to change elements', t => {
+test('Box accepts an is prop to change elements', () => {
   const json = render(
     React.createElement(Box, {
       is: 'h2'
     })
   ).toJSON()
-  t.is(json.type, 'h2')
+  expect(json.type).toBe('h2')
 })

@@ -8,6 +8,7 @@
     "test": "jest",
     "start": "x0 dev docs/App.js",
     "docs": "x0 build docs/App.js -d docs --cssLibrary='styled-components' --basename='/grid-styled'",
+    "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "icon-dev": "repng docs/Icon.js --dev",
     "icon": "repng docs/Icon.js -d 2000 -w 768 -h 768 -o docs -f icon"
   },
@@ -25,14 +26,17 @@
   "devDependencies": {
     "@compositor/x0": "^3.1.1",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "jest": "^23.1.0",
     "jest-styled-components": "^5.0.1",
+    "emotion": "^9.2.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-emotion": "^9.2.3",
     "react-live": "^1.9.2",
     "react-test-renderer": "^16.2.0",
     "react-x-ray": "^1.0.0-4",
@@ -46,7 +50,8 @@
     "styled-system": ">=2.0.2"
   },
   "peerDependencies": {
-    "styled-components": ">=2.0 || >=3.0"
+    "styled-components": ">=2.0 || >=3.0",
+    "emotion": ">=9.0"
   },
   "jest": {
     "roots": [

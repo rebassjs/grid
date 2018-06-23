@@ -49,6 +49,9 @@
     "styled-components": ">=2.0 || >=3.0"
   },
   "jest": {
+    "roots": [
+      "<rootDir>/tests/"
+    ],
     "testMatch": [
       "**/tests/**/*.js"
     ]

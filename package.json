@@ -1,7 +1,7 @@
 {
   "name": "grid-styled",
   "version": "4.2.0",
-  "description": "Responsive React grid system built with styled-components",
+  "description": "Responsive React grid system built with styled-system, with support for styled-components and emotion",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist && npm run emotion",

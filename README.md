@@ -2,7 +2,9 @@
 # Grid Styled
 
 Responsive React grid system built with
-[styled-components][sc] and [styled-system][system]
+[styled-system][system], with support for
+[styled-components][sc] and
+[emotion][emotion]
 
 http://jxnblk.com/grid-styled
 
@@ -31,6 +33,12 @@ const App = () => (
     </Box>
   </Flex>
 )
+```
+
+*Or* for emotion, import `grid-styled/emotion`
+
+```js
+import { Flex, Box } from 'grid-styled/emotion'
 ```
 
 ```jsx
@@ -206,7 +214,7 @@ The Box component uses [styled-system][system] for these props.
 
 ## Extending Components
 
-Using styled-components, you can customize any of the grid-styled components' styles.
+Using styled-components or emotion, you can customize any of the grid-styled components' styles.
 
 ### InlineFlex
 
@@ -265,7 +273,8 @@ const Column = props => (
 ## Theming
 
 Grid Styled uses smart defaults, but to customize the values,
-use styled-components’ `ThemeProvider` component.
+use the `ThemeProvider` component from styled-components or emotion.
+
 
 ```jsx
 import React from 'react'
@@ -326,9 +335,11 @@ const App = () => (
 - [styled-system][system]
 - [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components][sc]
+- [emotion][emotion]
 
 [ssp]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
 [sc]: https://github.com/styled-components/styled-components
 [system]: https://github.com/jxnblk/styled-system
+[emotion]: https://github.com/emotion-js/emotion
 
 [MIT License](LICENSE.md)

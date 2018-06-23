@@ -4,10 +4,8 @@
   "description": "Responsive React grid system built with styled-components",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "babel src -d dist",
-    "test": "nyc ava",
-    "test:emotion": "nyc ava test.emotion.js",
-    "cover": "nyc report --reporter=lcov --reporter=html",
+    "prepare": "babel src -d dist && npm run emotion",
+    "test": "jest",
     "start": "x0 dev docs/App.js",
     "docs": "x0 build docs/App.js -d docs --cssLibrary='styled-components' --basename='/grid-styled'",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
@@ -27,7 +25,6 @@
   "license": "MIT",
   "devDependencies": {
     "@compositor/x0": "^3.1.1",
-    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
@@ -35,7 +32,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "emotion": "^9.2.3",
-    "nyc": "^11.4.1",
+    "jest": "^23.1.0",
+    "jest-emotion": "^9.2.4",
+    "jest-styled-components": "^5.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
@@ -52,12 +51,16 @@
     "styled-system": ">=2.0.2"
   },
   "peerDependencies": {
-    "styled-components": ">=2.0 || >=3.0"
+    "styled-components": ">=2.0 || >=3.0",
+    "emotion": ">=9.0",
+    "react-emotion": ">=9.0"
   },
-  "ava": {
-    "require": [
-      "babel-register"
+  "jest": {
+    "roots": [
+      "<rootDir>/tests/"
     ],
-    "babel": "inherit"
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
   }
 }

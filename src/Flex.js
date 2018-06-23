@@ -4,9 +4,10 @@ import {
   alignItems,
   justifyContent,
 } from 'styled-system'
+import styled from 'styled-components'
 import Box from './Box'
 
-const Flex = Box.extend([],
+const Flex = styled(Box)([],
   { display: 'flex' },
   flexWrap,
   flexDirection,

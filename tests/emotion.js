@@ -1,7 +1,10 @@
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import 'jest-emotion'
+import * as emotion from 'emotion'
+import { createSerializer } from 'jest-emotion'
 import { Box, Flex } from '../dist/emotion'
+
+expect.addSnapshotSerializer(createSerializer(emotion))
 
 const renderJSON = el => render(el).toJSON()
 

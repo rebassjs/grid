@@ -1,43 +1,187 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Box renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 <div
-  className="css-11te1yy"
+  className="emotion-0"
 />
 `;
 
 exports[`Box renders with props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    margin: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
 <div
-  className="css-x0tuk6"
+  className="emotion-0"
 />
 `;
 
 exports[`Flex renders 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="css-sncxrr"
+  className="emotion-0"
 />
 `;
 
 exports[`Flex renders with flexDirection prop 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 <div
-  className="css-9skeys"
+  className="emotion-0"
 />
 `;
 
 exports[`Flex renders with legacy props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <div
-  className="css-1p65d31"
+  className="emotion-0"
 />
 `;
 
 exports[`Flex renders with props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <div
-  className="css-1p65d31"
+  className="emotion-0"
 />
 `;
 
 exports[`Flex renders with responsive props 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media screen and (min-width:40em) {
+
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
 <div
-  className="css-98rhb7"
+  className="emotion-0"
 />
 `;

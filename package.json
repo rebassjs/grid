@@ -52,7 +52,8 @@
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >=3.0",
-    "emotion": ">=9.0"
+    "emotion": ">=9.0",
+    "react-emotion": ">=9.0"
   },
   "jest": {
     "roots": [

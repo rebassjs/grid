@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+<div
+  className="css-11te1yy"
+/>
+`;
+
+exports[`Box renders with props 1`] = `
+<div
+  className="css-x0tuk6"
+/>
+`;
+
+exports[`Flex renders 1`] = `
+<div
+  className="css-sncxrr"
+/>
+`;
+
+exports[`Flex renders with flexDirection prop 1`] = `
+<div
+  className="css-9skeys"
+/>
+`;
+
+exports[`Flex renders with legacy props 1`] = `
+<div
+  className="css-1p65d31"
+/>
+`;
+
+exports[`Flex renders with props 1`] = `
+<div
+  className="css-1p65d31"
+/>
+`;
+
+exports[`Flex renders with responsive props 1`] = `
+<div
+  className="css-98rhb7"
+/>
+`;

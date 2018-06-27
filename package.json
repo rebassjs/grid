@@ -44,11 +44,12 @@
     "refunk": "^2.2.4",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
-    "styled-components": ">=2.0 || >=3.0"
+    "styled-components": "^3.3.3"
   },
   "dependencies": {
     "clean-tag": "^1.0.3",
-    "styled-system": ">=2.0.2"
+    "styled-system": "^2.3.2",
+    "system-components": "^2.2.2"
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >=3.0",

@@ -10,8 +10,8 @@
         [
           "transform-rename-import",
           {
-            "original": "styled-components",
-            "replacement": "react-emotion"
+            "original": "^system-components$",
+            "replacement": "system-components/emotion"
           }
         ]
       ]

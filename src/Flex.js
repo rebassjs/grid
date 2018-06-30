@@ -3,11 +3,7 @@ import Box from './Box'
 
 const Flex = system({
   is: Box
-}, {
-  // potential bug?
-  // boxSizing: 'border-box',
-  display: 'flex'
-},
+}, { display: 'flex' },
   'flexWrap',
   'flexDirection',
   'alignItems',

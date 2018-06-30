@@ -1,7 +1,7 @@
-import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
 import { Box, Flex } from '../src'
+import 'jest-styled-components'
 
 const renderJSON = el => render(el).toJSON()
 
@@ -43,10 +43,10 @@ test('Flex renders with props', () => {
 test('Flex renders with legacy props', () => {
   const json = renderJSON(
     <Flex
-      wrap
       flexDirection='column'
       align='center'
       justify='space-between'
+      wrap
     />
   )
   expect(json).toMatchSnapshot()
@@ -81,7 +81,6 @@ test('Box removes grid-styled props', () => {
       width: .5,
       color: 'blue',
       fontSize: 4,
-      wrap: true,
       flexWrap: 'wrap'
     })
   )
@@ -89,7 +88,6 @@ test('Box removes grid-styled props', () => {
   expect(json.props.width).toBe(undefined)
   expect(json.props.color).toBe(undefined)
   expect(json.props.fontSize).toBe(undefined)
-  expect(json.props.wrap).toBe(undefined)
 })
 
 test('Box accepts an is prop to change elements', () => {
@@ -100,3 +98,17 @@ test('Box accepts an is prop to change elements', () => {
   )
   expect(json.type).toBe('h2')
 })
+
+// system-components
+test('Box accepts a css prop', () => {
+  const json = renderJSON(
+    <Box
+      css={{
+        outline: '4px solid red'
+      }}
+    />
+  )
+  expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('outline', '4px solid red')
+})
+

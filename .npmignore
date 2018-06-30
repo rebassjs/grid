@@ -5,5 +5,5 @@ coverage
 test.js*
 .babelrc
 .travis.yml
-
+tests
 styled-space

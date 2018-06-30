@@ -70,7 +70,6 @@ test('Flex renders with responsive props', () => {
       justify={[ 'space-between', 'center' ]}
     />
   )
-  console.log('JSON', json)
   expect(json).toMatchSnapshot()
 })
 
@@ -101,3 +100,17 @@ test('Box accepts an is prop to change elements', () => {
   )
   expect(json.type).toBe('h2')
 })
+
+// system-components
+test('Box accepts a css prop', () => {
+  const json = renderJSON(
+    <Box
+      css={{
+        outline: '4px solid red'
+      }}
+    />
+  )
+  expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('outline', '4px solid red')
+})
+

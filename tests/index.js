@@ -46,6 +46,7 @@ test('Flex renders with legacy props', () => {
       flexDirection='column'
       align='center'
       justify='space-between'
+      wrap
     />
   )
   expect(json).toMatchSnapshot()

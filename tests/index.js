@@ -81,7 +81,6 @@ test('Box removes grid-styled props', () => {
       width: .5,
       color: 'blue',
       fontSize: 4,
-      // wrap: true,
       flexWrap: 'wrap'
     })
   )
@@ -89,7 +88,6 @@ test('Box removes grid-styled props', () => {
   expect(json.props.width).toBe(undefined)
   expect(json.props.color).toBe(undefined)
   expect(json.props.fontSize).toBe(undefined)
-  // expect(json.props.wrap).toBe(undefined)
 })
 
 test('Box accepts an is prop to change elements', () => {

@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "babel src -d dist && npm run emotion",
     "test": "jest",
-    "start": "x0 dev docs/App.js",
-    "docs": "x0 build docs/App.js -d docs --cssLibrary='styled-components' --basename='/grid-styled'",
+    "start": "x0 dev docs",
+    "docs": "x0 build docs -d site",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "icon-dev": "repng docs/Icon.js --dev",
     "icon": "repng docs/Icon.js -d 2000 -w 768 -h 768 -o docs -f icon"
@@ -24,7 +24,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
-    "@compositor/x0": "^3.1.1",
+    "@compositor/x0": "^6.0.1-0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
@@ -41,7 +41,7 @@
     "react-live": "^1.9.2",
     "react-test-renderer": "^16.2.0",
     "react-x-ray": "^1.0.0-4",
-    "refunk": "^2.2.4",
+    "refunk": "^3.0.1",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
     "styled-components": "^3.3.3"
@@ -62,5 +62,9 @@
     "testMatch": [
       "**/tests/**/*.js"
     ]
+  },
+  "x0": {
+    "title": "Grid Styled",
+    "basename": "/grid-styled"
   }
 }

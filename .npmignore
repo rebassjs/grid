@@ -7,3 +7,4 @@ test.js*
 .travis.yml
 tests
 styled-space
+site

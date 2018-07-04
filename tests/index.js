@@ -40,6 +40,20 @@ test('Flex renders with props', () => {
   expect(json).toMatchSnapshot()
 })
 
+test('Flex renders with Box props', () => {
+  const json = renderJSON(
+    <Flex
+      is="footer"
+      m={[ 1, 2 ]}
+      px={[ 1, 2 ]}
+      w={1}
+      flex='1 1 auto'
+      alignSelf='flex-start'
+    />
+  )
+  expect(json).toMatchSnapshot()
+});
+
 test('Flex renders with legacy props', () => {
   const json = renderJSON(
     <Flex

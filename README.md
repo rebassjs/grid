@@ -8,7 +8,7 @@ Responsive React grid system built with
 [styled-components][sc] and
 [emotion][emotion]
 
-http://jxnblk.com/grid-styled
+https://jxnblk.com/grid-styled
 
 [![Build Status][badge]][travis]
 [![Downloads][downloads-badge]][npm]

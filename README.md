@@ -1,4 +1,6 @@
 
+<img src='docs/logo.png' width='128' height='128' />
+
 # Grid Styled
 
 Responsive React grid system built with
@@ -8,10 +10,17 @@ Responsive React grid system built with
 
 http://jxnblk.com/grid-styled
 
-[![Build Status][build-badge]][build-status]
+[![Build Status][badge]][travis]
+[![Downloads][downloads-badge]][npm]
+[![Version][version-badge]][npm]
 
-[build-badge]: https://img.shields.io/travis/jxnblk/grid-styled/master.svg?style=flat-square
-[build-status]: https://travis-ci.org/jxnblk/grid-styled
+[badge]: https://img.shields.io/travis/jxnblk/grid-styled.svg?style=flat-square
+[travis]: https://travis-ci.org/jxnblk/grid-styled
+
+[downloads-badge]: https://img.shields.io/npm/dw/grid-styled.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/grid-styled.svg?style=flat-square
+[npm]: https://npmjs.com/package/grid-styled
+
 
 ## Getting Started
 

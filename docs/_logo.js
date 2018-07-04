@@ -1,5 +1,5 @@
 import React from 'react'
-import { gradient, colors } from './styles'
+import { gradient, colors } from './_components'
 
 const Icon = () => (
   <div style={sx.root}>

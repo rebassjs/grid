@@ -9,11 +9,15 @@ export default `
     <Flex flexWrap='wrap' mx={-3} py={4}>
       <Box p={3} width={[ 1/2, 1/3 ]}>
         <Bar />
-        <h2 className='h2 xh0'>Negative</h2>
+        <Heading
+          my={5}
+          fontSize={[ 6, 7 ]}>
+          Negative
+        </Heading>
       </Box>
       <Box p={3} width={[ 1/2, 1/3 ]}>
         <Bar />
-        <h2 className='h2'>Space</h2>
+        <Heading my={4}>Space</Heading>
       </Box>
     </Flex>
   </Box>

@@ -2,11 +2,11 @@ export default `
 <Flex flexWrap='wrap'>
   <Box p={3} width={[ 1, 1/2 ]}>
     <Bar />
-    <h2 className='h1 xh0'>Consistent</h2>
+    <Heading my={4} fontSize={[ 5, 6, 7 ]}>Consistent</Heading>
   </Box>
   <Box p={3} width={[ 1, 1/2 ]}>
     <Bar />
-    <h2 className='h1 xh0'>Flexible</h2>
+    <Heading my={4} fontSize={[ 5, 6, 7 ]}>Flexible</Heading>
   </Box>
 </Flex>
 `

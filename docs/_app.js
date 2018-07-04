@@ -90,6 +90,8 @@ const nav = [
   'getting-started',
   'Box',
   'Flex',
+  'responsive',
+  'theming',
   'styled-space',
 ]
 

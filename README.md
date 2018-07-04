@@ -203,7 +203,7 @@ The Box component uses [styled-system][system] for these props.
 // 100% below the smallest breakpoint,
 // 50% from the next breakpoint and up,
 // and 25% from the next breakpoint and up
-<Box w={[ 1, 1/2, 1/4 ]} />
+<Box width={[ 1, 1/2, 1/4 ]} />
 
 // responsive margin
 <Box m={[ 1, 2, 3, 4 ]} />

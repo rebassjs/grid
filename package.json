@@ -9,8 +9,7 @@
     "start": "x0 dev docs",
     "docs": "x0 build docs -d site",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
-    "icon-dev": "repng docs/Icon.js --dev",
-    "icon": "repng docs/Icon.js -d 2000 -w 768 -h 768 -o docs -f icon"
+    "logo": "repng docs/_logo.js -w 768 -h 768 -d docs -f logo.png"
   },
   "keywords": [
     "react",
@@ -65,6 +64,14 @@
   },
   "x0": {
     "title": "Grid Styled",
-    "basename": "/grid-styled"
+    "basename": "/grid-styled",
+    "meta": [
+      { "name": "description", "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion" },
+      { "name": "twitter:card", "content": "summary" },
+      { "name": "twitter:site", "content": "@jxnblk" },
+      { "name": "twitter:title", "content": "Grid Styled" },
+      { "name": "twitter:description", "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion" },
+      { "name": "twitter:image", "content": "https://jxnblk.com/grid-styled/logo.png" }
+    ]
   }
 }

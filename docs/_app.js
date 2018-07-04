@@ -4,7 +4,6 @@ import {
   Box,
 } from '../src'
 import styled from 'styled-components'
-import { connect } from 'refunk'
 import { SidebarLayout } from '@compositor/x0/components'
 import sortBy from 'lodash.sortBy'
 import {
@@ -21,13 +20,13 @@ const Main = styled.div`
 
 const Footer = () => (
   <Flex alignItems='center'>
+    <Box mx='auto' />
     <Btn href='https://github.com/jxnblk/grid-styled'>
       GitHub
     </Btn>
     <Btn href='https://jxnblk.com'>
       Made by Jxnblk
     </Btn>
-    <Box mx='auto' />
     <Btn href='https://travis-ci.org/jxnblk/rebass'>
       <img
         src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
@@ -112,17 +111,7 @@ class App extends React.Component {
     const { Component, ...props } = this.props
     const index = props.location.pathname === '/'
     const Layout = index ? Main : SidebarLayout
-    const routes = [
-      ...sortNav(props.routes),
-      {
-        path: 'https://github.com/jxnblk/grid-styled',
-        name: 'GitHub'
-      },
-      {
-        path: 'https://jxnblk.com',
-        name: 'Made by Jxnblk'
-      },
-    ]
+    const routes = sortNav(props.routes)
 
     return (
       <React.Fragment>

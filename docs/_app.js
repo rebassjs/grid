@@ -5,7 +5,7 @@ import {
 } from '../src'
 import styled from 'styled-components'
 import { SidebarLayout } from '@compositor/x0/components'
-import sortBy from 'lodash.sortBy'
+import sortBy from 'lodash.sortby'
 import {
   colors,
   BaseButton,

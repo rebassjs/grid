@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { space, fontSize, fontWeight } from 'styled-system'
-import div from 'clean-tag'
+import tag from 'clean-tag'
 import { Arrow } from 'reline'
 
 export const colors = {
@@ -27,12 +27,10 @@ const cx = key => colors[key] || key
 
 export const gradient = (n, from, to) => `linear-gradient(${n}deg, ${cx(from)}, ${cx(to)})`
 
-export const Button = styled.a`
+export const Button = styled(tag.a)`
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .2em;
   text-decoration: none;
   margin: 0;
   padding: 12px;
@@ -63,12 +61,10 @@ export const Button = styled.a`
   }
 `
 
-export const BaseButton = styled.button`
+export const BaseButton = styled(tag.button)`
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .2em;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -137,7 +133,7 @@ export const Color = styled.div`
   ${grx}
 `
 
-export const Heading = styled(div)([],
+export const Heading = styled(tag)([],
   space,
   fontSize
 )
@@ -148,7 +144,7 @@ Heading.defaultProps = {
   fontSize: 4
 }
 
-export const Text = styled(div)([],
+export const Text = styled(tag)([],
   space,
   fontSize,
   fontWeight,

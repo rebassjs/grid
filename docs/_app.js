@@ -5,55 +5,15 @@ import {
 } from '../src'
 import styled from 'styled-components'
 import { connect } from 'refunk'
+import { SidebarLayout } from '@compositor/x0/components'
+import sortBy from 'lodash.sortBy'
 import {
   colors,
   BaseButton,
-  ArrowButton,
   Tweet,
 } from './_components'
 
-const dec = state => ({ index: state.index - 1 })
-const inc = state => ({ index: state.index + 1 })
-const toggle = key => state => ({ [key]: !state[key] })
-
 const Btn = BaseButton.withComponent('a')
-
-const Header = ({
-  update,
-  index,
-  xray,
-  ...props
-}) =>
-  <Flex
-    flexWrap='wrap'
-    alignItems='center'
-    color={colors.magenta}
-    bg='black'>
-    <BaseButton
-      onClick={e => update({ index: 0 })}
-      children='Grid Styled'
-    />
-    <Btn href='https://github.com/jxnblk/grid-styled'>
-      GitHub
-    </Btn>
-    <Box ml='auto' />
-    <Tweet />
-    <Box ml={2} />
-    <BaseButton
-      onClick={e => update(toggle('xray'))}
-      active={xray}
-      children='X-Ray'
-    />
-    <ArrowButton
-      left
-      title='Previous'
-      onClick={e => update(dec)}
-    />
-    <ArrowButton
-      onClick={e => update(inc)}
-      title='Next'
-    />
-  </Flex>
 
 const Main = styled.div`
   min-height: 100vh;
@@ -61,7 +21,10 @@ const Main = styled.div`
 
 const Footer = () => (
   <Flex alignItems='center'>
-    <Btn href='http://jxnblk.com'>
+    <Btn href='https://github.com/jxnblk/grid-styled'>
+      GitHub
+    </Btn>
+    <Btn href='https://jxnblk.com'>
       Made by Jxnblk
     </Btn>
     <Box mx='auto' />
@@ -122,26 +85,62 @@ class Keyboard extends React.Component {
   }
 }
 
-const App = connect(({
-  children,
-  Component,
-  ...props
-}) =>
-  <div>
-    <Header {...props} />
-    <Main>
-      <Component {...props} />
-    </Main>
-    <Footer />
-    <Keyboard {...props} />
-    <GA />
-    <Twitter />
-  </div>
-)
+const nav = [
+  'index',
+  'getting-started',
+  'Box',
+  'Flex',
+  'styled-space',
+]
 
-App.defaultProps = {
-  index: 0,
-  xray: false
+const sortNav = routes => sortBy(routes, route => nav.indexOf(route.name))
+  .map(route => ({
+    ...route,
+    name: route.name === 'index' ? 'Home' : route.name
+  }))
+
+class App extends React.Component {
+  state = {
+    index: 0,
+    xray: false,
+    update: fn => this.setState(fn)
+  }
+
+  render () {
+    const { Component, ...props } = this.props
+    const index = props.location.pathname === '/'
+    const Layout = index ? Main : SidebarLayout
+    const routes = [
+      ...sortNav(props.routes),
+      {
+        path: 'https://github.com/jxnblk/grid-styled',
+        name: 'GitHub'
+      },
+      {
+        path: 'https://jxnblk.com',
+        name: 'Made by Jxnblk'
+      },
+    ]
+
+    return (
+      <React.Fragment>
+        <Layout
+          {...props}
+          title='Grid Styled'
+          routes={routes}>
+          <Component
+            {...props}
+            {...this.state}
+          />
+        </Layout>
+        <Footer />
+        <Keyboard {...props} />
+        <GA />
+        <Twitter />
+      </React.Fragment>
+    )
+  }
 }
+
 
 export default App

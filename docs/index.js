@@ -1,5 +1,6 @@
 import React from 'react'
-import XRay from 'react-x-ray'
+import { XRay } from '@compositor/kit'
+import { Link } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import {
   LiveProvider,
@@ -12,6 +13,8 @@ import {
   Color,
   Bar,
   Button,
+  BaseButton,
+  ArrowButton,
   Heading,
   Text,
   colors
@@ -26,8 +29,47 @@ const scope = {
   Button,
   Heading,
   Text,
+  Link,
   colors
 }
+
+const dec = state => ({ index: state.index - 1 })
+const inc = state => ({ index: state.index + 1 })
+const toggle = key => state => ({ [key]: !state[key] })
+
+const Toolbar = ({
+  update,
+  index,
+  xray,
+  ...props
+}) =>
+  <Flex
+    flexWrap='wrap'
+    alignItems='center'
+    color={colors.magenta}
+    bg='black'>
+    <BaseButton
+      is={Link}
+      to='/getting-started'
+      children='Documentation'
+    />
+    <Box mx='auto' />
+    <BaseButton
+      onClick={e => update(toggle('xray'))}
+      active={xray}
+      children='X-Ray'
+    />
+    <ArrowButton
+      left
+      title='Previous'
+      onClick={e => update(dec)}
+    />
+    <ArrowButton
+      onClick={e => update(inc)}
+      title='Next'
+    />
+  </Flex>
+
 
 export default ({
   xray,
@@ -38,6 +80,11 @@ export default ({
 
   return (
     <React.Fragment>
+      <Toolbar
+        xray={xray}
+        index={index}
+        update={update}
+      />
       <LiveProvider
         code={code}
         scope={scope}
@@ -60,7 +107,7 @@ export default ({
 
 const sx = {
   top: {
-    minHeight: '70vh',
+    minHeight: '60vh',
     display: 'flex',
     alignItems: 'center',
   },

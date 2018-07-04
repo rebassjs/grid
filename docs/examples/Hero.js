@@ -15,10 +15,16 @@ export default `
   </Text>
   <Flex alignItems='center'>
     <Button
+      is={Link}
+      to='/getting-started'
+      children='Documentation'
+    />
+    <Box mx={2} />
+    <Button
       href='https://github.com/jxnblk/grid-styled'
       children='GitHub'
     />
-    <Box mx={1} />
+    <Box mx={2} />
     <pre>npm i grid-styled</pre>
   </Flex>
 </Box>

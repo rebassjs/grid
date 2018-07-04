@@ -47,7 +47,7 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "clean-tag": "^1.0.3",
+    "clean-tag": "^1.0.4",
     "system-components": ">=2.2.0"
   },
   "peerDependencies": {

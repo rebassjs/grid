@@ -12,6 +12,8 @@ import {
   Color,
   Bar,
   Button,
+  Heading,
+  Text,
   colors
 } from './_components'
 import examples from './examples'
@@ -22,6 +24,8 @@ const scope = {
   Color,
   Bar,
   Button,
+  Heading,
+  Text,
   colors
 }
 

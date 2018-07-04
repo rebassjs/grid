@@ -2,9 +2,12 @@ export default `
 <Flex flexWrap='wrap' alignItems='center'>
   <Box p={4} width={[1, 2/3, null, 1/2 ]}>
     <Bar />
-    <p className='h3 xh2 bold'>
+    <Text
+      my={4}
+      fontSize={[ 4, 5 ]}
+      fontWeight='bold'>
       “White space is to be regarded as an active element, not a passive background.”
-    </p>
+    </Text>
   </Box>
   <Box
     p={2}

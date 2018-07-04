@@ -69,6 +69,41 @@ exports[`Flex renders 1`] = `
 />
 `;
 
+exports[`Flex renders with Box props 1`] = `
+.c1 {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (min-width:40em) {
+  .c1 {
+    margin: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+<footer
+  className="c0 c1"
+/>
+`;
+
 exports[`Flex renders with flexDirection prop 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -86,6 +121,7 @@ exports[`Flex renders with flexDirection prop 1`] = `
 
 <div
   className="c0 c1"
+  flexDirection="column"
 />
 `;
 
@@ -116,7 +152,11 @@ exports[`Flex renders with legacy props 1`] = `
 }
 
 <div
+  align="center"
   className="c0 c1"
+  flexDirection="column"
+  justify="space-between"
+  wrap={true}
 />
 `;
 
@@ -147,7 +187,11 @@ exports[`Flex renders with props 1`] = `
 }
 
 <div
+  alignItems="center"
   className="c0 c1"
+  flexDirection="column"
+  flexWrap="wrap"
+  justifyContent="space-between"
 />
 `;
 
@@ -204,6 +248,30 @@ exports[`Flex renders with responsive props 1`] = `
 }
 
 <div
+  align={
+    Array [
+      "stretch",
+      "center",
+    ]
+  }
   className="c0 c1"
+  flexDirection={
+    Array [
+      "column",
+      "row",
+    ]
+  }
+  justify={
+    Array [
+      "space-between",
+      "center",
+    ]
+  }
+  wrap={
+    Array [
+      true,
+      false,
+    ]
+  }
 />
 `;

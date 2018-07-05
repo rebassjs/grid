@@ -44,6 +44,7 @@ exports[`Box renders with props 1`] = `
 exports[`Flex renders 1`] = `
 .emotion-0 {
   box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,6 +58,7 @@ exports[`Flex renders 1`] = `
 
 exports[`Flex renders with flexDirection prop 1`] = `
 .emotion-0 {
+  box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -74,6 +76,7 @@ exports[`Flex renders with flexDirection prop 1`] = `
 
 exports[`Flex renders with legacy props 1`] = `
 .emotion-0 {
+  box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -103,6 +106,7 @@ exports[`Flex renders with legacy props 1`] = `
 exports[`Flex renders with props 1`] = `
 .emotion-0 {
   box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,6 +134,7 @@ exports[`Flex renders with props 1`] = `
 
 exports[`Flex renders with responsive props 1`] = `
 .emotion-0 {
+  box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;

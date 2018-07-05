@@ -65,7 +65,7 @@ exports[`Flex renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
@@ -85,7 +85,7 @@ exports[`Flex renders with flexDirection prop 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
@@ -116,7 +116,7 @@ exports[`Flex renders with legacy props 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
@@ -147,7 +147,7 @@ exports[`Flex renders with props 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
@@ -204,6 +204,6 @@ exports[`Flex renders with responsive props 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;

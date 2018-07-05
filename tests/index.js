@@ -112,3 +112,22 @@ test('Box accepts a css prop', () => {
   expect(json).toHaveStyleRule('outline', '4px solid red')
 })
 
+test('Flex accepts an is prop and keeps styles', () => {
+  const json = renderJSON(
+    <Flex is='footer'
+      px={3}
+      py={4}
+      color='tomato'
+      alignItems='center'
+      justifyContent='center'
+    />
+  )
+  expect(json.type).toBe('footer')
+  expect(json).toHaveStyleRule('padding-left', '16px')
+  expect(json).toHaveStyleRule('padding-right', '16px')
+  expect(json).toHaveStyleRule('padding-top', '32px')
+  expect(json).toHaveStyleRule('padding-bottom', '32px')
+  expect(json).toHaveStyleRule('color', 'tomato')
+  expect(json).toHaveStyleRule('align-items', 'center')
+  expect(json).toHaveStyleRule('justify-content', 'center')
+})

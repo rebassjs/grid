@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "clean-tag": "^1.0.4",
-    "system-components": ">=2.2.0"
+    "system-components": ">=2.2.3"
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >=3.0",
@@ -66,12 +66,30 @@
     "title": "Grid Styled",
     "basename": "/grid-styled",
     "meta": [
-      { "name": "description", "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion" },
-      { "name": "twitter:card", "content": "summary" },
-      { "name": "twitter:site", "content": "@jxnblk" },
-      { "name": "twitter:title", "content": "Grid Styled" },
-      { "name": "twitter:description", "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion" },
-      { "name": "twitter:image", "content": "https://jxnblk.com/grid-styled/logo.png" }
+      {
+        "name": "description",
+        "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@jxnblk"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Grid Styled"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://jxnblk.com/grid-styled/logo.png"
+      }
     ]
   }
 }

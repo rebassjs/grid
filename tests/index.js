@@ -1,6 +1,7 @@
 import React from 'react'
 import { create as render } from 'react-test-renderer'
 import { Box, Flex } from '../src'
+import styled from 'styled-components'
 import 'jest-styled-components'
 
 const renderJSON = el => render(el).toJSON()
@@ -130,4 +131,49 @@ test('Flex accepts an is prop and keeps styles', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
   expect(json).toHaveStyleRule('align-items', 'center')
   expect(json).toHaveStyleRule('justify-content', 'center')
+})
+
+test('Box passes innerRef to DOM element', () => {
+  let el = 'hello'
+  render(
+    <Box innerRef={ref => el = ref} />,
+    {
+      createNodeMock: (element) => {
+        return {
+          howdy: () => 'hi'
+        }
+      }
+    }
+  )
+  expect(el).not.toBe('hello')
+  expect(el.howdy()).toBe('hi')
+})
+
+test('Flex passes innerRef to DOM element', () => {
+  let el = 'hello'
+  render(
+    <Flex innerRef={ref => el = ref} />,
+    {
+      createNodeMock: (element) => ({
+        hello: () => 'hi'
+      })
+    }
+  )
+  expect(el).not.toBe('hello')
+  expect(el.hello()).toBe('hi')
+})
+
+test('sc innerRef extensions', () => {
+  const Base = styled.div([])
+  const Ext = styled(Base)([])
+  let el = 'hello'
+  render(
+    <Ext innerRef={ref => el = ref} />, {
+      createNodeMock: el => ({
+        hello: () => 'hi'
+      })
+    }
+  )
+  expect(el).not.toBe('hello')
+  expect(el.hello()).toBe('hi')
 })

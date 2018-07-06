@@ -3,6 +3,7 @@ import { create as render } from 'react-test-renderer'
 import { Box, Flex } from '../src'
 import styled from 'styled-components'
 import 'jest-styled-components'
+import Tag from 'clean-tag'
 
 const renderJSON = el => render(el).toJSON()
 
@@ -161,6 +162,22 @@ test('Flex passes innerRef to DOM element', () => {
   )
   expect(el).not.toBe('hello')
   expect(el.hello()).toBe('hi')
+})
+
+test('clean-tag innerRef', () => {
+  const Base = props => <Tag {...props} />
+  const Ext = props => <Base {...props} />
+  let el = 'hello'
+  render(
+    <Ext innerRef={ref => el = ref} />, {
+      createNodeMock: el => ({
+        hello: () => 'hi'
+      })
+    }
+  )
+  expect(el).not.toBe('hello')
+  expect(el.hello()).toBe('hi')
+
 })
 
 test('sc innerRef extensions', () => {

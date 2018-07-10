@@ -279,6 +279,14 @@ const Column = props => (
 )
 ```
 
+## Changing the HTML element
+
+Grid Styled components use the [`is` prop][is-prop] from [system-components][] to change the underlying HTML element.
+
+```jsx
+<Box is='header' />
+```
+
 ## Theming
 
 Grid Styled uses smart defaults, but to customize the values,
@@ -342,6 +350,7 @@ const App = () => (
 
 - [styled-space][ssp]
 - [styled-system][system]
+- [system-components][]
 - [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components][sc]
 - [emotion][emotion]
@@ -350,5 +359,7 @@ const App = () => (
 [sc]: https://github.com/styled-components/styled-components
 [system]: https://github.com/jxnblk/styled-system
 [emotion]: https://github.com/emotion-js/emotion
+[is-prop]: https://github.com/jxnblk/styled-system/tree/master/system-components#changing-the-underlying-html-element
+[system-components]: https://github.com/jxnblk/styled-system/tree/master/system-components
 
 [MIT License](LICENSE.md)

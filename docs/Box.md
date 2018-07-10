@@ -143,3 +143,11 @@ Sets the `align-self` property.
 <Box alignSelf='flex-end' />
 ```
 
+### `is` (string|component)
+
+Changes the underlying HTML element or component.
+
+```jsx
+<Box is='header' />
+```
+

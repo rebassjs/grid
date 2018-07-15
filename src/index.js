@@ -1,6 +1,26 @@
-export { default as Box } from './Box'
-export { default as Flex } from './Flex'
-export { default as theme } from './theme'
+import system from 'system-components'
 
-// for backwards compatibility
-export { default as div } from 'clean-tag'
+export const Box = system({}, {
+  boxSizing: 'border-box'
+},
+  'width',
+  'space',
+  'fontSize',
+  'color',
+  'flex',
+  'order',
+  'alignSelf',
+)
+
+Box.displayName = 'Box'
+
+export const Flex = system({
+  is: Box
+}, { display: 'flex' },
+  'flexWrap',
+  'flexDirection',
+  'alignItems',
+  'justifyContent'
+)
+
+Flex.displayName = 'Flex'

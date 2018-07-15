@@ -18,7 +18,7 @@ test('Box renders with props', () => {
   const json = renderJSON(<Box
     m={[ 1, 2 ]}
     px={[ 1, 2 ]}
-    w={1}
+    width={1}
     flex='1 1 auto'
     alignSelf='flex-start'
   />)
@@ -43,18 +43,6 @@ test('Flex renders with props', () => {
   expect(json).toMatchSnapshot()
 })
 
-test('Flex renders with legacy props', () => {
-  const json = renderJSON(
-    <Flex
-      wrap
-      flexDirection='column'
-      align='center'
-      justify='space-between'
-    />
-  )
-  expect(json).toMatchSnapshot()
-})
-
 test('Flex renders with flexDirection prop', () => {
   const json = renderJSON(
     <Flex
@@ -67,16 +55,15 @@ test('Flex renders with flexDirection prop', () => {
 test('Flex renders with responsive props', () => {
   const json = renderJSON(
     <Flex
-      wrap={[ true, false ]}
+      flexWrap={[ 'wrap', 'nowrap' ]}
       flexDirection={[ 'column', 'row' ]}
-      align={[ 'stretch', 'center' ]}
-      justify={[ 'space-between', 'center' ]}
+      alignItems={[ 'stretch', 'center' ]}
+      justifyContent={[ 'space-between', 'center' ]}
     />
   )
   expect(json).toMatchSnapshot()
 })
 
-// clean-tag
 test('Box removes grid-styled props', () => {
   const json = renderJSON(
     React.createElement(Box, {

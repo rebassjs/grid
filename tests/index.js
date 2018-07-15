@@ -15,17 +15,22 @@ test('Box renders with props', () => {
   const json = renderJSON(<Box
     m={[ 1, 2 ]}
     px={[ 1, 2 ]}
-    w={1}
+    width={1}
     flex='1 1 auto'
     alignSelf='flex-start'
   />)
   expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('width', '100%')
+  expect(json).toHaveStyleRule('flex', '1 1 auto')
+  expect(json).toHaveStyleRule('align-self', 'flex-start')
+  expect(json).toHaveStyleRule('margin', '4px')
 })
 
 // Flex
 test('Flex renders', () => {
   const json = renderJSON(<Flex />)
   expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('display', 'flex')
 })
 
 test('Flex renders with props', () => {
@@ -38,18 +43,10 @@ test('Flex renders with props', () => {
     />
   )
   expect(json).toMatchSnapshot()
-})
-
-test('Flex renders with legacy props', () => {
-  const json = renderJSON(
-    <Flex
-      flexDirection='column'
-      align='center'
-      justify='space-between'
-      wrap
-    />
-  )
-  expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('flex-wrap', 'wrap')
+  expect(json).toHaveStyleRule('flex-direction', 'column')
+  expect(json).toHaveStyleRule('align-items', 'center')
+  expect(json).toHaveStyleRule('justify-content', 'space-between')
 })
 
 test('Flex renders with flexDirection prop', () => {
@@ -59,21 +56,21 @@ test('Flex renders with flexDirection prop', () => {
     />
   )
   expect(json).toMatchSnapshot()
+  expect(json).toHaveStyleRule('flex-direction', 'column')
 })
 
 test('Flex renders with responsive props', () => {
   const json = renderJSON(
     <Flex
-      wrap={[ true, false ]}
+      flexWrap={[ 'wrap', 'nowrap' ]}
       flexDirection={[ 'column', 'row' ]}
-      align={[ 'stretch', 'center' ]}
-      justify={[ 'space-between', 'center' ]}
+      alignItems={[ 'stretch', 'center' ]}
+      justifyContent={[ 'space-between', 'center' ]}
     />
   )
   expect(json).toMatchSnapshot()
 })
 
-// clean-tag
 test('Box removes grid-styled props', () => {
   const json = renderJSON(
     React.createElement(Box, {
@@ -99,7 +96,6 @@ test('Box accepts an is prop to change elements', () => {
   expect(json.type).toBe('h2')
 })
 
-// system-components
 test('Box accepts a css prop', () => {
   const json = renderJSON(
     <Box
@@ -130,4 +126,21 @@ test('Flex accepts an is prop and keeps styles', () => {
   expect(json).toHaveStyleRule('color', 'tomato')
   expect(json).toHaveStyleRule('align-items', 'center')
   expect(json).toHaveStyleRule('justify-content', 'center')
+})
+
+test('Flex omits grid-styled props', () => {
+  const json = renderJSON(
+    <Flex is='footer'
+      px={3}
+      py={4}
+      color='tomato'
+      alignItems='center'
+      justifyContent='center'
+    />
+  )
+  expect(json.props.px).toBe(undefined)
+  expect(json.props.py).toBe(undefined)
+  expect(json.props.color).toBe(undefined)
+  expect(json.props.alignItems).toBe(undefined)
+  expect(json.props.justifyContent).toBe(undefined)
 })

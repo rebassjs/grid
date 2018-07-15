@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.0 - 2018-07-15
+
+- Updated to system-components v3 and styled-system v3
+- Removed legacy props (`wrap`, `align`, `justify`, `w`)
+- Cleaned up code base
+
 ## v4.2.0 - 2018-06-30
 
 - Use system-components

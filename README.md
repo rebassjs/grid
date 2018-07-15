@@ -190,6 +190,19 @@ Sets the `align-self` property.
 <Box alignSelf='flex-end' />
 ```
 
+#### `css` (string|object)
+
+Pass styles to styled-components or emotion.
+
+```jsx
+<Box
+  bg='blue'
+  css={{
+    borderRadius: '4px'
+  }}
+/>
+```
+
 ## `<Flex />`
 
 The Flex component extends the Box component and sets display flex.

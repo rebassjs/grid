@@ -4,7 +4,7 @@
 # Grid Styled
 
 Responsive React grid system built with
-[styled-system][system], with support for
+[styled-system][], with support for
 [styled-components][sc] and
 [emotion][emotion]
 
@@ -129,7 +129,7 @@ The Box component handles width, margin and padding.
 
 ### Props
 
-All grid-styled components use [styled-system][system] for style props,
+All grid-styled components use [styled-system][] for style props,
 which pick up values from a [theme](#theming) and allow for responsive styles to be passed as [array values](#responsive-styles).
 
 #### `width` (number|string|array)
@@ -219,7 +219,7 @@ It also includes the following props:
 Most props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
-The Box component uses [styled-system][system] for these props.
+The Box component uses [styled-system][] for these props.
 
 ```jsx
 // 100% below the smallest breakpoint,
@@ -236,12 +236,25 @@ The Box component uses [styled-system][system] for these props.
 
 ## Extending Components
 
-Using styled-components or emotion, you can customize any of the grid-styled components' styles.
+Component can be extended with React or using styled-components or emotion.
 
 ### InlineFlex
 
-```js
-// Example
+```jsx
+import React from 'react'
+import { Flex } from 'grid-styled'
+
+const InlineFlex = props =>
+  <Flex
+    {...props}
+    css={{
+      display: 'inline-flex'
+    }}
+  />
+```
+
+```jsx
+// styled-components example
 import styled from 'styled-components'
 import { Flex } from 'grid-styled'
 
@@ -252,8 +265,22 @@ const InlineFlex = styled(Flex)`
 
 ### Max-Width Container
 
+```jsx
+import React from 'react'
+import { Box } from 'grid-styled'
+
+const Container = props =>
+  <Box
+    {...props}
+    mx='auto'
+    css={{
+      maxWidth: '1024px'
+    }}
+  />
+```
+
 ```js
-// Example
+// styled-components example
 import styled from 'styled-components'
 import { Box } from 'grid-styled'
 
@@ -268,7 +295,6 @@ Container.defaultProps = {
 
 ### Auto Grid
 
-Components can also be extended with React.
 This example creates components for a grid with set gutters where the columns expand to fill in the space.
 
 ```jsx
@@ -311,12 +337,13 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Box } from 'grid-styled'
 
+const theme = {
+  space: [ 0, 6, 12, 18, 24 ],
+  breakpoints: [ '32em', '48em', '64em' ]
+}
+
 const App = () => (
-  <ThemeProvider
-    theme={{
-      space: [ 0, 6, 12, 18, 24 ],
-      breakpoints: [ '32em', '48em', '64em' ]
-    }}>
+  <ThemeProvider theme={theme}>
     <div>
       <Box width={[1, 1/2, 1/4]} px={2}>Box with custom spacing scale and breakpoints</Box>
     </div>
@@ -342,7 +369,7 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ## Styled Space
 
-Grid Styled works nicely together with [styled-space][ssp]:
+Grid Styled also works with the optional [styled-space][] package.
 
 ```jsx
 import React from 'react'
@@ -361,16 +388,16 @@ const App = () => (
 
 ## Related
 
-- [styled-space][ssp]
-- [styled-system][system]
+- [styled-space][]
+- [styled-system][]
 - [system-components][]
 - [Rebass](https://github.com/jxnblk/rebass)
 - [styled-components][sc]
 - [emotion][emotion]
 
-[ssp]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
+[styled-space]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
 [sc]: https://github.com/styled-components/styled-components
-[system]: https://github.com/jxnblk/styled-system
+[styled-system]: https://github.com/jxnblk/styled-system
 [emotion]: https://github.com/emotion-js/emotion
 [is-prop]: https://github.com/jxnblk/styled-system/tree/master/system-components#changing-the-underlying-html-element
 [system-components]: https://github.com/jxnblk/styled-system/tree/master/system-components

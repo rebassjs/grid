@@ -143,6 +143,22 @@ Sets the `align-self` property.
 <Box alignSelf='flex-end' />
 ```
 
+### `css` (string|object)
+
+Pass styles to styled-components or emotion.
+This is useful as an escape hatch for one-off styles
+or as a way to extend Grid Styled components.
+
+```jsx
+<Box
+  bg='blue'
+  css={{
+    borderRadius: '4px'
+  }}
+/>
+```
+
+
 ### `is` (string|component)
 
 Changes the underlying HTML element or component.

@@ -193,6 +193,8 @@ Sets the `align-self` property.
 #### `css` (string|object)
 
 Pass styles to styled-components or emotion.
+This is useful as an escape hatch for one-off styles
+or as a way to extend Grid Styled components.
 
 ```jsx
 <Box

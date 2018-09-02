@@ -28,6 +28,7 @@
   "devDependencies": {
     "@compositor/kit": "^1.0.47",
     "@reach/component-component": "^0.1.0",
+    "@rebass/mdx": "^1.0.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
@@ -48,6 +49,7 @@
     "react-test-renderer": "^16.2.0",
     "reline": "^1.0.0-beta.3",
     "repng": "^3.0.0",
+    "sidepane": "^1.0.0-3",
     "styled-components": "^3.3.3"
   },
   "peerDependencies": {
@@ -61,35 +63,6 @@
     ],
     "testMatch": [
       "**/tests/**/*.js"
-    ]
-  },
-  "___REMOVE__x0": {
-    "title": "Rebass Grid",
-    "meta": [
-      {
-        "name": "description",
-        "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion"
-      },
-      {
-        "name": "twitter:card",
-        "content": "summary"
-      },
-      {
-        "name": "twitter:site",
-        "content": "@jxnblk"
-      },
-      {
-        "name": "twitter:title",
-        "content": "Rebass Grid"
-      },
-      {
-        "name": "twitter:description",
-        "content": "Responsive React grid system built with styled-system, with support for styled-components and emotion"
-      },
-      {
-        "name": "twitter:image",
-        "content": "https://rebassjs.org/grid/logo.png"
-      }
     ]
   }
 }

@@ -402,6 +402,6 @@ const App = () => (
 [styled-system]: https://github.com/jxnblk/styled-system
 [emotion]: https://github.com/emotion-js/emotion
 [is-prop]: https://github.com/jxnblk/styled-system/tree/master/system-components#changing-the-underlying-html-element
-[rebass-components]: https://github.com/rebassjs/components
+[@rebass/components]: https://github.com/rebassjs/components
 
 [MIT License](LICENSE.md)

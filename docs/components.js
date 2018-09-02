@@ -4,6 +4,8 @@ import { space, fontSize, fontWeight } from 'styled-system'
 import tag from 'clean-tag'
 import { Head } from 'mdx-go'
 import { Arrow } from 'reline'
+import RebassMDX from '@rebass/mdx'
+import { Box, Flex } from '../src'
 
 export const colors = {
   cyan: '#0ff',
@@ -16,9 +18,31 @@ const cx = key => colors[key] || key
 
 export const gradient = (n, from, to) => `linear-gradient(${n}deg, ${cx(from)}, ${cx(to)})`
 
+export const Layout = props => props.location.pathname === '/' ? props.children :
+  <React.Fragment>
+    <Box
+      px={4}
+      py={5}
+      mx='auto'
+      css={{
+        maxWidth: '768px'
+      }}>
+      {props.children}
+    </Box>
+  </React.Fragment>
+
 export const Root = props =>
   <React.Fragment>
-    {props.children}
+    <Head>
+      <title>Rebass Grid</title>
+      <meta name='description' content='Responsive React grid system built with styled-system, with support for styled-components and emotion' />
+      <meta name='twitter:description' content='Responsive React grid system built with styled-system, with support for styled-components and emotion' />
+      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:site' content='@jxnblk' />
+      <meta name='twitter:title' content='Rebass Grid' />
+      <meta name='twitter:image' content='https://rebassjs.org/grid/logo.png' />
+    </Head>
+    <Layout {...props} />
   </React.Fragment>
 
 export const Button = styled(tag.a)`

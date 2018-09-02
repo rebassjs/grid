@@ -10,8 +10,8 @@
         [
           "transform-rename-import",
           {
-            "original": "^system-components$",
-            "replacement": "system-components/emotion"
+            "original": "^@rebass/components$",
+            "replacement": "@rebass/components/emotion"
           }
         ]
       ]

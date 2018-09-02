@@ -1,10 +1,10 @@
 import React from 'react'
-import { gradient, colors } from './_components'
+import { gradient, colors } from './components'
 
-const Icon = () => (
+export default () => (
   <div style={sx.root}>
     <div width={320}>
-      GS
+      RG
       <div style={sx.bar} />
     </div>
   </div>
@@ -36,5 +36,3 @@ const sx = {
     backgroundImage: gradient(90, colors.cyan, colors.magenta),
   }
 }
-
-export default Icon

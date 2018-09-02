@@ -1,6 +1,3 @@
----
-title: styled-space
----
 
 # styled-space
 

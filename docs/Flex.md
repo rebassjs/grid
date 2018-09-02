@@ -1,6 +1,3 @@
----
-title: Flex
----
 
 # Flex
 
@@ -8,7 +5,7 @@ The Flex component extends the Box component and sets display flex.
 
 ```jsx
 import React from 'react'
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from '@rebass/grid'
 
 const App = props =>
   <Flex>

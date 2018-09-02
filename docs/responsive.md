@@ -1,10 +1,7 @@
----
-title: Responsive
----
 
 # Responsive
 
-Grid Styled props accept arrays as values for mobile-first responsive styles,
+Rebass Grid props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
 The Box component uses [styled-system][system] for these props.

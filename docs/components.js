@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { space, fontSize, fontWeight } from 'styled-system'
 import tag from 'clean-tag'
+import { Head } from 'mdx-go'
 import { Arrow } from 'reline'
 
 export const colors = {
@@ -14,6 +15,11 @@ export const colors = {
 const cx = key => colors[key] || key
 
 export const gradient = (n, from, to) => `linear-gradient(${n}deg, ${cx(from)}, ${cx(to)})`
+
+export const Root = props =>
+  <React.Fragment>
+    {props.children}
+  </React.Fragment>
 
 export const Button = styled(tag.a)`
   font-family: inherit;
@@ -121,7 +127,7 @@ export const Color = styled.div`
   ${grx}
 `
 
-export const Heading = styled(tag)([],
+export const Heading = styled(tag.div)([],
   space,
   fontSize
 )
@@ -132,17 +138,9 @@ Heading.defaultProps = {
   fontSize: 4
 }
 
-export const Text = styled(tag)([],
+export const Text = styled(tag.div)([],
   space,
   fontSize,
   fontWeight,
-)
-
-export const Tweet = () => (
-  <a
-    className='twitter-share-button'
-    href='https://twitter.com/intent/tweet'
-    children='Tweet'
-  />
 )
 

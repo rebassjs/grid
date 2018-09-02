@@ -1,6 +1,3 @@
----
-title: Box
----
 
 # Box
 
@@ -82,7 +79,7 @@ The Box component handles width, margin and padding.
 
 ## Props
 
-All grid-styled components use [styled-system][system] for style props,
+All Rebass Grid components use [styled-system][system] for style props,
 which pick up values from a [theme](#theming) and allow for responsive styles to be passed as [array values](#responsive-styles).
 
 ### `width` (number|string|array)
@@ -147,7 +144,7 @@ Sets the `align-self` property.
 
 Pass styles to styled-components or emotion.
 This is useful as an escape hatch for one-off styles
-or as a way to extend Grid Styled components.
+or as a way to extend Rebass Grid components.
 
 ```jsx
 <Box

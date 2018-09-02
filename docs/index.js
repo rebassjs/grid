@@ -1,7 +1,6 @@
 import React from 'react'
 import { XRay } from '@compositor/kit'
-import { Link } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
+import { Link } from 'mdx-go'
 import {
   LiveProvider,
   LiveError,
@@ -18,18 +17,21 @@ import {
   Heading,
   Text,
   colors
-} from './_components'
-import examples from './examples'
+} from './components'
+import { examples } from './examples'
+import Component from '@reach/component-component'
+
+export { Root } from './components'
 
 const scope = {
   Flex,
   Box,
+  Link,
   Color,
   Bar,
   Button,
   Heading,
   Text,
-  Link,
   colors
 }
 
@@ -38,7 +40,7 @@ const inc = state => ({ index: state.index + 1 })
 const toggle = key => state => ({ [key]: !state[key] })
 
 const Toolbar = ({
-  update,
+  setState,
   index,
   xray,
   ...props
@@ -50,60 +52,25 @@ const Toolbar = ({
     bg='black'>
     <BaseButton
       is={Link}
-      to='/getting-started'
+      href='/getting-started'
       children='Documentation'
     />
     <Box mx='auto' />
     <BaseButton
-      onClick={e => update(toggle('xray'))}
+      onClick={e => setState(toggle('xray'))}
       active={xray}
       children='X-Ray'
     />
     <ArrowButton
       left
       title='Previous'
-      onClick={e => update(dec)}
+      onClick={e => setState(dec)}
     />
     <ArrowButton
-      onClick={e => update(inc)}
+      onClick={e => setState(inc)}
       title='Next'
     />
   </Flex>
-
-
-export default ({
-  xray,
-  index,
-  update
-}) => {
-  const code = examples[Math.abs(index) % examples.length] || '<pre>missing example</pre>'
-
-  return (
-    <React.Fragment>
-      <Toolbar
-        xray={xray}
-        index={index}
-        update={update}
-      />
-      <LiveProvider
-        code={code}
-        scope={scope}
-        mountStylesheet={false}>
-        <XRay
-          disabled={!xray}
-          style={sx.xray}
-          color={colors.magenta}
-          backgroundColor='#000'>
-          <div style={sx.top}>
-            <LivePreview style={sx.preview} />
-          </div>
-        </XRay>
-        <LiveError style={sx.error} />
-        <LiveEditor style={sx.bottom} />
-      </LiveProvider>
-      </React.Fragment>
-  )
-}
 
 const sx = {
   top: {
@@ -142,3 +109,36 @@ const sx = {
     transition: 'background-color .3s ease-out'
   }
 }
+
+export default props =>
+  <Component
+    initialState={{
+      index: 0,
+      xray: false
+    }}
+    children={({ state, setState }) => {
+      const code = examples[Math.abs(state.index) % examples.length] || '<pre>missing example</pre>'
+
+      return (
+        <React.Fragment>
+          <Toolbar {...state} setState={setState} />
+          <LiveProvider
+            code={code}
+            scope={scope}
+            mountStylesheet={false}>
+            <XRay
+              disabled={!state.xray}
+              style={sx.xray}
+              color={colors.magenta}
+              backgroundColor='#000'>
+              <div style={sx.top}>
+                <LivePreview style={sx.preview} />
+              </div>
+            </XRay>
+            <LiveError style={sx.error} />
+            <LiveEditor style={sx.bottom} />
+          </LiveProvider>
+        </React.Fragment>
+      )
+    }}
+  />

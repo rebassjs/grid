@@ -1,15 +1,15 @@
 {
-  "name": "grid-styled",
-  "version": "5.0.2",
+  "name": "@rebass/grid",
+  "version": "6.0.0-0",
   "description": "Responsive React grid system built with styled-system, with support for styled-components and emotion",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist && npm run emotion",
     "test": "jest",
-    "start": "x0 dev docs",
-    "docs": "x0 build docs -d site",
+    "start": "mdx-go docs",
+    "build": "mdx-go build docs -d site --basename /grid",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
-    "logo": "repng docs/_logo.js -w 768 -h 768 -d docs -f logo.png"
+    "logo": "repng docs/logo.js -w 768 -h 768 -d docs -f logo.png"
   },
   "keywords": [
     "react",
@@ -22,20 +22,25 @@
   ],
   "author": "Brent Jackson",
   "license": "MIT",
+  "dependencies": {
+    "@rebass/components": "^4.0.0-1"
+  },
   "devDependencies": {
     "@compositor/kit": "^1.0.47",
-    "@compositor/x0": "^6.0.1",
+    "@reach/component-component": "^0.1.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "clean-tag": "^2.0.0",
     "emotion": "^9.2.3",
     "jest": "^23.1.0",
     "jest-emotion": "^9.2.4",
     "jest-styled-components": "^5.0.1",
     "lodash.sortby": "^4.7.0",
+    "mdx-go": "^1.0.13",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
@@ -44,9 +49,6 @@
     "reline": "^1.0.0-beta.3",
     "repng": "^3.0.0",
     "styled-components": "^3.3.3"
-  },
-  "dependencies": {
-    "system-components": "^3.0.0"
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >=3.0",
@@ -61,9 +63,8 @@
       "**/tests/**/*.js"
     ]
   },
-  "x0": {
-    "title": "Grid Styled",
-    "basename": "/grid-styled",
+  "___REMOVE__x0": {
+    "title": "Rebass Grid",
     "meta": [
       {
         "name": "description",
@@ -79,7 +80,7 @@
       },
       {
         "name": "twitter:title",
-        "content": "Grid Styled"
+        "content": "Rebass Grid"
       },
       {
         "name": "twitter:description",
@@ -87,7 +88,7 @@
       },
       {
         "name": "twitter:image",
-        "content": "https://jxnblk.com/grid-styled/logo.png"
+        "content": "https://rebassjs.org/grid/logo.png"
       }
     ]
   }

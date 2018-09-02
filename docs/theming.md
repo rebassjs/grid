@@ -1,16 +1,13 @@
----
-title: Theming
----
 
 # Theming
 
-Grid Styled uses smart defaults, but to customize the values,
+Rebass Grid uses smart defaults, but to customize the values,
 use the `ThemeProvider` component from styled-components or emotion.
 
 ```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 const App = () => (
   <ThemeProvider
@@ -35,7 +32,7 @@ To customize, provide an array of string values that will be converted to media 
 
 ## Spacing Scale
 
-Grid Styled components' margin and padding props use a 4 step spacing scale to help
+Rebass Grid components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,

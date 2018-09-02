@@ -1,16 +1,13 @@
----
-title: Getting Started
----
 
 # Getting Started
 
 ```sh
-npm i grid-styled styled-components
+npm i @rebass/grid styled-components
 ```
 
 ```jsx
 import React from 'react'
-import { Box, Flex } from 'grid-styled'
+import { Box, Flex } from '@rebass/grid'
 
 const App = props =>
   <Flex>
@@ -25,9 +22,9 @@ const App = props =>
 
 ## Emotion
 
-To use Grid Styled with emotion, import `grid-styled/emotion`
+To use Rebass Grid with emotion, import `@rebass/grid/emotion`
 
 ```js
-import { Box, Flex } from 'grid-styled/emotion'
+import { Box, Flex } from '@rebass/grid/emotion'
 ```
 

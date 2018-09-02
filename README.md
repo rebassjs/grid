@@ -44,11 +44,17 @@ const App = () => (
 )
 ```
 
+### Emotion
+
 *Or* for emotion, import `@rebass/grid/emotion`
 
 ```js
 import { Flex, Box } from '@rebass/grid/emotion'
 ```
+
+## Box
+
+The Box component handles width, margin and padding.
 
 ```jsx
 // Different widths at different breakpoints
@@ -122,23 +128,18 @@ import { Flex, Box } from '@rebass/grid/emotion'
 <Box mx={-2} />
 ```
 
-
-## `<Box />`
-
-The Box component handles width, margin and padding.
-
-### Props
+## Props
 
 All @rebass/grid components use [styled-system][] for style props,
 which pick up values from a [theme](#theming) and allow for responsive styles to be passed as [array values](#responsive-styles).
 
-#### `width` (number|string|array)
+### `width` (number|string|array)
 
 Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
 Pass an array to set different widths at different breakpoints for
 [responsive styles](#responsive-styles).
 
-#### Margin and Padding Props
+### Margin and Padding Props
 
 Both margin and padding props accept numbers, strings, and arrays as values.
 Using a number from `0-8` (i.e. an index of `theme.space`) will reference a step on the spacing scale.
@@ -166,7 +167,7 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 - `px`: padding-left and padding-right
 - `py`: padding-top and padding-bottom
 
-#### `flex` (string|array)
+### `flex` (string|array)
 
 Sets the `flex` property.
 
@@ -174,7 +175,7 @@ Sets the `flex` property.
 <Box flex='1 1 auto' />
 ```
 
-#### `order` (number|string|array)
+### `order` (number|string|array)
 
 Sets the `order` property.
 
@@ -182,7 +183,7 @@ Sets the `order` property.
 <Box order={2} />
 ```
 
-#### `alignSelf` (string|array)
+### `alignSelf` (string|array)
 
 Sets the `align-self` property.
 
@@ -190,7 +191,7 @@ Sets the `align-self` property.
 <Box alignSelf='flex-end' />
 ```
 
-#### `css` (string|object)
+### `css` (string|object)
 
 Pass styles to styled-components or emotion.
 This is useful as an escape hatch for one-off styles
@@ -205,10 +206,23 @@ or as a way to extend Rebass Grid components.
 />
 ```
 
-## `<Flex />`
+## `Flex`
 
 The Flex component extends the Box component and sets display flex.
-It also includes the following props:
+
+```jsx
+import React from 'react'
+import { Flex, Box } from '@rebass/grid'
+
+const App = props =>
+  <Flex>
+    <Box>Flex</Box>
+    <Box>Box</Box>
+  </Flex>
+```
+
+In addition to the Box component props,
+Flex also includes the following:
 
 - `alignItems` (string|array) sets `align-items`
 - `justifyContent` (string|array) sets `justify-content`
@@ -218,10 +232,9 @@ It also includes the following props:
 
 ## Responsive Styles
 
-Most props accept arrays as values for mobile-first responsive styles,
+Rebass Grid props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
-The Box component uses [styled-system][] for these props.
 
 ```jsx
 // 100% below the smallest breakpoint,
@@ -353,7 +366,7 @@ const App = () => (
 )
 ```
 
-**Breakpoints**
+### Breakpoints
 
 The Flex and Box components use a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
@@ -361,7 +374,7 @@ Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
 To customize, provide an array of string values that will be converted to media queries.
 
-**Spacing Scale**
+### Spacing Scale
 
 Rebass Grid components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.

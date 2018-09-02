@@ -4,7 +4,6 @@ import { space, fontSize, fontWeight } from 'styled-system'
 import tag from 'clean-tag'
 import { Head } from 'mdx-go'
 import { Arrow } from 'reline'
-import RebassMDX from '@rebass/mdx'
 import { Box, Flex } from '../src'
 
 export const colors = {

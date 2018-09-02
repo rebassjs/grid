@@ -51,8 +51,8 @@ const Toolbar = ({
     color={colors.magenta}
     bg='black'>
     <BaseButton
-      is={Link}
-      href='/getting-started'
+      is='a'
+      href='https://github.com/rebassjs/grid'
       children='Documentation'
     />
     <Box mx='auto' />

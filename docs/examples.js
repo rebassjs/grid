@@ -15,12 +15,6 @@ const Hero = `
   </Text>
   <Flex alignItems='center'>
     <Button
-      is={Link}
-      href='/getting-started'
-      children='Documentation'
-    />
-    <Box mx={2} />
-    <Button
       href='https://github.com/rebassjs/grid'
       children='GitHub'
     />

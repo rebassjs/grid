@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.0-0 2018-09-02
+
+- Rename package to `@rebass/grid`
+
 ## v5.0.0 - 2018-07-15
 
 - Updated to system-components v3 and styled-system v3

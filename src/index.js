@@ -1,6 +1,6 @@
-import system from 'system-components'
+import comp from '@rebass/components'
 
-export const Box = system({}, {
+export const Box = comp({}, {
   boxSizing: 'border-box'
 },
   'width',
@@ -14,8 +14,8 @@ export const Box = system({}, {
 
 Box.displayName = 'Box'
 
-export const Flex = system({
-  is: Box
+export const Flex = comp({
+  extend: Box
 }, { display: 'flex' },
   'flexWrap',
   'flexDirection',

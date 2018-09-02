@@ -1,36 +1,36 @@
 
 <img src='docs/logo.png' width='128' height='128' />
 
-# Grid Styled
+# Rebass Grid
 
 Responsive React grid system built with
 [styled-system][], with support for
 [styled-components][sc] and
 [emotion][emotion]
 
-https://jxnblk.com/grid-styled
+https://rebassjs.org/grid
 
 [![Build Status][badge]][travis]
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
 
-[badge]: https://img.shields.io/travis/jxnblk/grid-styled.svg?style=flat-square
-[travis]: https://travis-ci.org/jxnblk/grid-styled
+[badge]: https://img.shields.io/travis/rebassjs/grid.svg?style=flat-square
+[travis]: https://travis-ci.org/rebassjs/grid
 
-[downloads-badge]: https://img.shields.io/npm/dw/grid-styled.svg?style=flat-square
-[version-badge]: https://img.shields.io/npm/v/grid-styled.svg?style=flat-square
-[npm]: https://npmjs.com/package/grid-styled
+[downloads-badge]: https://img.shields.io/npm/dw/@rebass/grid.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/@rebass/grid.svg?style=flat-square
+[npm]: https://npmjs.com/package/@rebass/grid
 
 
 ## Getting Started
 
 ```sh
-npm i grid-styled
+npm i @rebass/grid
 ```
 
 ```jsx
 import React from 'react'
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from '@rebass/grid'
 
 const App = () => (
   <Flex>
@@ -44,11 +44,17 @@ const App = () => (
 )
 ```
 
-*Or* for emotion, import `grid-styled/emotion`
+### Emotion
+
+*Or* for emotion, import `@rebass/grid/emotion`
 
 ```js
-import { Flex, Box } from 'grid-styled/emotion'
+import { Flex, Box } from '@rebass/grid/emotion'
 ```
+
+## Box
+
+The Box component handles width, margin and padding.
 
 ```jsx
 // Different widths at different breakpoints
@@ -122,23 +128,18 @@ import { Flex, Box } from 'grid-styled/emotion'
 <Box mx={-2} />
 ```
 
+## Props
 
-## `<Box />`
-
-The Box component handles width, margin and padding.
-
-### Props
-
-All grid-styled components use [styled-system][] for style props,
+All @rebass/grid components use [styled-system][] for style props,
 which pick up values from a [theme](#theming) and allow for responsive styles to be passed as [array values](#responsive-styles).
 
-#### `width` (number|string|array)
+### `width` (number|string|array)
 
 Sets width, where numbers `0-1` are percentage values, larger numbers are pixel values, and strings are raw CSS values with units.
 Pass an array to set different widths at different breakpoints for
 [responsive styles](#responsive-styles).
 
-#### Margin and Padding Props
+### Margin and Padding Props
 
 Both margin and padding props accept numbers, strings, and arrays as values.
 Using a number from `0-8` (i.e. an index of `theme.space`) will reference a step on the spacing scale.
@@ -166,7 +167,7 @@ Margin and padding props follow a shorthand syntax for specifying direction.
 - `px`: padding-left and padding-right
 - `py`: padding-top and padding-bottom
 
-#### `flex` (string|array)
+### `flex` (string|array)
 
 Sets the `flex` property.
 
@@ -174,7 +175,7 @@ Sets the `flex` property.
 <Box flex='1 1 auto' />
 ```
 
-#### `order` (number|string|array)
+### `order` (number|string|array)
 
 Sets the `order` property.
 
@@ -182,7 +183,7 @@ Sets the `order` property.
 <Box order={2} />
 ```
 
-#### `alignSelf` (string|array)
+### `alignSelf` (string|array)
 
 Sets the `align-self` property.
 
@@ -190,11 +191,11 @@ Sets the `align-self` property.
 <Box alignSelf='flex-end' />
 ```
 
-#### `css` (string|object)
+### `css` (string|object)
 
 Pass styles to styled-components or emotion.
 This is useful as an escape hatch for one-off styles
-or as a way to extend Grid Styled components.
+or as a way to extend Rebass Grid components.
 
 ```jsx
 <Box
@@ -205,10 +206,23 @@ or as a way to extend Grid Styled components.
 />
 ```
 
-## `<Flex />`
+## `Flex`
 
 The Flex component extends the Box component and sets display flex.
-It also includes the following props:
+
+```jsx
+import React from 'react'
+import { Flex, Box } from '@rebass/grid'
+
+const App = props =>
+  <Flex>
+    <Box>Flex</Box>
+    <Box>Box</Box>
+  </Flex>
+```
+
+In addition to the Box component props,
+Flex also includes the following:
 
 - `alignItems` (string|array) sets `align-items`
 - `justifyContent` (string|array) sets `justify-content`
@@ -218,10 +232,9 @@ It also includes the following props:
 
 ## Responsive Styles
 
-Most props accept arrays as values for mobile-first responsive styles,
+Rebass Grid props accept arrays as values for mobile-first responsive styles,
 where the first value is for all breakpoints, then each value after is for a min-width
 media query from that breakpoint and up.
-The Box component uses [styled-system][] for these props.
 
 ```jsx
 // 100% below the smallest breakpoint,
@@ -244,7 +257,7 @@ Component can be extended with React or using styled-components or emotion.
 
 ```jsx
 import React from 'react'
-import { Flex } from 'grid-styled'
+import { Flex } from '@rebass/grid'
 
 const InlineFlex = props =>
   <Flex
@@ -258,7 +271,7 @@ const InlineFlex = props =>
 ```jsx
 // styled-components example
 import styled from 'styled-components'
-import { Flex } from 'grid-styled'
+import { Flex } from '@rebass/grid'
 
 const InlineFlex = styled(Flex)`
   display: inline-flex;
@@ -269,7 +282,7 @@ const InlineFlex = styled(Flex)`
 
 ```jsx
 import React from 'react'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 const Container = props =>
   <Box
@@ -284,7 +297,7 @@ const Container = props =>
 ```js
 // styled-components example
 import styled from 'styled-components'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 const Container = styled(Box)`
   max-width: 1024px;
@@ -302,7 +315,7 @@ This example creates components for a grid with set gutters where the columns ex
 ```jsx
 // Example
 import React from 'react'
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from '@rebass/grid'
 
 const Row = props => (
   <Flex
@@ -322,7 +335,7 @@ const Column = props => (
 
 ## Changing the HTML element
 
-Grid Styled components use the [`is` prop][is-prop] from [system-components][] to change the underlying HTML element.
+Rebsas Grid components use the [`is` prop][is-prop] from [@rebass/components][] to change the underlying HTML element.
 
 ```jsx
 <Box is='header' />
@@ -330,14 +343,14 @@ Grid Styled components use the [`is` prop][is-prop] from [system-components][] t
 
 ## Theming
 
-Grid Styled uses smart defaults, but to customize the values,
+Rebass Grid uses smart defaults, but to customize the values,
 use the `ThemeProvider` component from styled-components or emotion.
 
 
 ```jsx
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 const theme = {
   space: [ 0, 6, 12, 18, 24 ],
@@ -353,7 +366,7 @@ const App = () => (
 )
 ```
 
-**Breakpoints**
+### Breakpoints
 
 The Flex and Box components use a mobile-first responsive approach,
 where any value set works from that breakpoint and wider.
@@ -361,9 +374,9 @@ Breakpoints are hard-coded to the following min-widths: `40em`, `52em`, `64em`.
 
 To customize, provide an array of string values that will be converted to media queries.
 
-**Spacing Scale**
+### Spacing Scale
 
-Grid Styled components' margin and padding props use a 4 step spacing scale to help
+Rebass Grid components' margin and padding props use a 4 step spacing scale to help
 keep things aligned and keep layouts consistent.
 
 The default scale is based on an 8px/powers-of-two grid: `[ 0, 4, 8, 16, 32, 64, 128, 256, 512 ]`,
@@ -371,11 +384,11 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ## Styled Space
 
-Grid Styled also works with the optional [styled-space][] package.
+Rebass Grid also works with the optional [styled-space][] package.
 
 ```jsx
 import React from 'react'
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from '@rebass/grid'
 import Space from 'styled-space'
 
 const App = () => (
@@ -392,16 +405,16 @@ const App = () => (
 
 - [styled-space][]
 - [styled-system][]
-- [system-components][]
-- [Rebass](https://github.com/jxnblk/rebass)
+- [@rebass/components][]
+- [Rebass](https://rebassjs.org/)
 - [styled-components][sc]
 - [emotion][emotion]
 
-[styled-space]: https://github.com/jxnblk/grid-styled/tree/master/styled-space
+[styled-space]: https://github.com/rebassjs/grid/tree/master/styled-space
 [sc]: https://github.com/styled-components/styled-components
 [styled-system]: https://github.com/jxnblk/styled-system
 [emotion]: https://github.com/emotion-js/emotion
 [is-prop]: https://github.com/jxnblk/styled-system/tree/master/system-components#changing-the-underlying-html-element
-[system-components]: https://github.com/jxnblk/styled-system/tree/master/system-components
+[@rebass/components]: https://github.com/rebassjs/components
 
 [MIT License](LICENSE.md)

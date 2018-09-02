@@ -2,7 +2,9 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { space, fontSize, fontWeight } from 'styled-system'
 import tag from 'clean-tag'
+import { Head } from 'mdx-go'
 import { Arrow } from 'reline'
+import { Box, Flex } from '../src'
 
 export const colors = {
   cyan: '#0ff',
@@ -14,6 +16,33 @@ export const colors = {
 const cx = key => colors[key] || key
 
 export const gradient = (n, from, to) => `linear-gradient(${n}deg, ${cx(from)}, ${cx(to)})`
+
+export const Layout = props => props.location.pathname === '/' ? props.children :
+  <React.Fragment>
+    <Box
+      px={4}
+      py={5}
+      mx='auto'
+      css={{
+        maxWidth: '768px'
+      }}>
+      {props.children}
+    </Box>
+  </React.Fragment>
+
+export const Root = props =>
+  <React.Fragment>
+    <Head>
+      <title>Rebass Grid</title>
+      <meta name='description' content='Responsive React grid system built with styled-system, with support for styled-components and emotion' />
+      <meta name='twitter:description' content='Responsive React grid system built with styled-system, with support for styled-components and emotion' />
+      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:site' content='@jxnblk' />
+      <meta name='twitter:title' content='Rebass Grid' />
+      <meta name='twitter:image' content='https://rebassjs.org/grid/logo.png' />
+    </Head>
+    <Layout {...props} />
+  </React.Fragment>
 
 export const Button = styled(tag.a)`
   font-family: inherit;
@@ -121,7 +150,7 @@ export const Color = styled.div`
   ${grx}
 `
 
-export const Heading = styled(tag)([],
+export const Heading = styled(tag.div)([],
   space,
   fontSize
 )
@@ -132,17 +161,9 @@ Heading.defaultProps = {
   fontSize: 4
 }
 
-export const Text = styled(tag)([],
+export const Text = styled(tag.div)([],
   space,
   fontSize,
   fontWeight,
-)
-
-export const Tweet = () => (
-  <a
-    className='twitter-share-button'
-    href='https://twitter.com/intent/tweet'
-    children='Tweet'
-  />
 )
 

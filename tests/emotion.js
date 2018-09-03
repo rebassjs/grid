@@ -64,7 +64,7 @@ test('Flex renders with responsive props', () => {
   expect(json).toMatchSnapshot()
 })
 
-test('Box removes grid-styled props', () => {
+test('Box removes style props', () => {
   const json = renderJSON(
     React.createElement(Box, {
       id: 'hi',

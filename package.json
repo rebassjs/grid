@@ -39,7 +39,7 @@
     "jest": "^23.5.0",
     "jest-emotion": "^9.2.7",
     "jest-styled-components": "^6.1.1",
-    "mdx-go": "^1.0.15",
+    "mdx-go": "^1.0.16",
     "react-emotion": "^9.2.8",
     "react-live": "^1.11.0",
     "react-test-renderer": "^16.4.2",

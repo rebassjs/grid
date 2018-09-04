@@ -3,6 +3,7 @@ node_js:
   - 10
 before_deploy:
   - npm run build
+  - cp docs/logo.png site
 deploy:
   provider: pages
   skip_cleanup: true

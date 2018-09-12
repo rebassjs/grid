@@ -71,31 +71,6 @@ test('Flex renders with responsive props', () => {
   expect(json).toMatchSnapshot()
 })
 
-test('Box removes style props', () => {
-  const json = renderJSON(
-    React.createElement(Box, {
-      id: 'hi',
-      width: .5,
-      color: 'blue',
-      fontSize: 4,
-      flexWrap: 'wrap'
-    })
-  )
-  expect(json.props.id).toBe('hi')
-  expect(json.props.width).toBe(undefined)
-  expect(json.props.color).toBe(undefined)
-  expect(json.props.fontSize).toBe(undefined)
-})
-
-test('Box accepts an is prop to change elements', () => {
-  const json = renderJSON(
-    React.createElement(Box, {
-      is: 'h2'
-    })
-  )
-  expect(json.type).toBe('h2')
-})
-
 test('Box accepts a css prop', () => {
   const json = renderJSON(
     <Box
@@ -106,41 +81,4 @@ test('Box accepts a css prop', () => {
   )
   expect(json).toMatchSnapshot()
   expect(json).toHaveStyleRule('outline', '4px solid red')
-})
-
-test('Flex accepts an is prop and keeps styles', () => {
-  const json = renderJSON(
-    <Flex is='footer'
-      px={3}
-      py={4}
-      color='tomato'
-      alignItems='center'
-      justifyContent='center'
-    />
-  )
-  expect(json.type).toBe('footer')
-  expect(json).toHaveStyleRule('padding-left', '16px')
-  expect(json).toHaveStyleRule('padding-right', '16px')
-  expect(json).toHaveStyleRule('padding-top', '32px')
-  expect(json).toHaveStyleRule('padding-bottom', '32px')
-  expect(json).toHaveStyleRule('color', 'tomato')
-  expect(json).toHaveStyleRule('align-items', 'center')
-  expect(json).toHaveStyleRule('justify-content', 'center')
-})
-
-test('Flex omits style props', () => {
-  const json = renderJSON(
-    <Flex is='footer'
-      px={3}
-      py={4}
-      color='tomato'
-      alignItems='center'
-      justifyContent='center'
-    />
-  )
-  expect(json.props.px).toBe(undefined)
-  expect(json.props.py).toBe(undefined)
-  expect(json.props.color).toBe(undefined)
-  expect(json.props.alignItems).toBe(undefined)
-  expect(json.props.justifyContent).toBe(undefined)
 })

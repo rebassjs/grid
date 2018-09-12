@@ -10,8 +10,8 @@
         [
           "transform-rename-import",
           {
-            "original": "^@rebass/components$",
-            "replacement": "@rebass/components/emotion"
+            "original": "^styled-components$",
+            "replacement": "react-emotion"
           }
         ]
       ]

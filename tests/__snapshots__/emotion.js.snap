@@ -16,10 +16,10 @@ exports[`Box renders 1`] = `
 exports[`Box renders with props 1`] = `
 .emotion-0 {
   box-sizing: border-box;
-  width: 100%;
   margin: 4px;
   padding-left: 4px;
   padding-right: 4px;
+  width: 100%;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -38,6 +38,7 @@ exports[`Box renders with props 1`] = `
 
 <div
   className="emotion-0"
+  width={1}
 />
 `;
 

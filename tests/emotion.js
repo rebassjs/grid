@@ -63,28 +63,3 @@ test('Flex renders with responsive props', () => {
   )
   expect(json).toMatchSnapshot()
 })
-
-test('Box removes style props', () => {
-  const json = renderJSON(
-    React.createElement(Box, {
-      id: 'hi',
-      width: .5,
-      color: 'blue',
-      fontSize: 4,
-      flexWrap: 'wrap'
-    })
-  )
-  expect(json.props.id).toBe('hi')
-  expect(json.props.width).toBe(undefined)
-  expect(json.props.color).toBe(undefined)
-  expect(json.props.fontSize).toBe(undefined)
-})
-
-test('Box accepts an is prop to change elements', () => {
-  const json = renderJSON(
-    React.createElement(Box, {
-      is: 'h2'
-    })
-  )
-  expect(json.type).toBe('h2')
-})

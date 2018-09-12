@@ -4,7 +4,7 @@
   "description": "Responsive React grid system built with styled-system, with support for styled-components and emotion",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist && npm run emotion",
+    "prepare": "rm -rf dist && babel src -d dist && npm run emotion",
     "test": "jest",
     "start": "mdx-go docs",
     "build": "mdx-go build docs -d site --basename /grid",

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { space, fontSize, fontWeight } from 'styled-system'
-import tag from 'clean-tag'
 import { Head } from 'mdx-go'
 import { Arrow } from 'reline'
 import { Box, Flex } from '../src'
@@ -44,7 +43,7 @@ export const Root = props =>
     <Layout {...props} />
   </React.Fragment>
 
-export const Button = styled(tag.a)`
+export const Button = styled('a')`
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
@@ -78,7 +77,7 @@ export const Button = styled(tag.a)`
   }
 `
 
-export const BaseButton = styled(tag.button)`
+export const BaseButton = styled('button')`
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
@@ -150,7 +149,7 @@ export const Color = styled.div`
   ${grx}
 `
 
-export const Heading = styled(tag.div)([],
+export const Heading = styled('div')([],
   space,
   fontSize
 )
@@ -161,7 +160,7 @@ Heading.defaultProps = {
   fontSize: 4
 }
 
-export const Text = styled(tag.div)([],
+export const Text = styled('div')([],
   space,
   fontSize,
   fontWeight,

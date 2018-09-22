@@ -6,7 +6,7 @@
 Responsive React grid system built with
 [styled-system][], with support for
 [styled-components][sc] and
-[emotion][emotion]
+[emotion][emotion] (previously called `grid-styled`)
 
 https://rebassjs.org/grid
 

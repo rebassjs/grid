@@ -23,7 +23,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^3.1.0"
+    "styled-system": "^3.1.4"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.47",
@@ -34,17 +34,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
-    "emotion": "^9.2.8",
+    "emotion": "^9.2.10",
     "jest": "^23.6.0",
     "jest-emotion": "^9.2.7",
-    "jest-styled-components": "^6.2.0",
-    "mdx-go": "^1.1.6",
-    "react-emotion": "^9.2.8",
+    "jest-styled-components": "^6.2.1",
+    "mdx-go": "^1.1.10",
+    "react-emotion": "^9.2.10",
     "react-live": "^1.11.0",
-    "react-test-renderer": "^16.5.0",
+    "react-test-renderer": "^16.5.2",
     "reline": "^1.0.0-beta.3",
     "repng": "^3.1.0",
-    "styled-components": "^4.0.0-beta.3-side-effect-test"
+    "styled-components": "^4.0.0-beta.8"
   },
   "peerDependencies": {
     "styled-components": ">=2.0",

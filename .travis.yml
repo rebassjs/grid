@@ -1,13 +1,3 @@
 language: node_js
 node_js:
   - 10
-before_deploy:
-  - npm run build
-  - cp docs/logo.png site
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  local_dir: site
-  on:
-    branch: master

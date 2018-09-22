@@ -58,5 +58,17 @@
     "testMatch": [
       "**/tests/**/*.js"
     ]
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebassjs/grid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rebassjs/grid/issues"
+  },
+  "homepage": "https://github.com/rebassjs/grid#readme"
 }

@@ -40,13 +40,13 @@
     "jest": "^23.6.0",
     "jest-emotion": "^9.2.7",
     "jest-styled-components": "^6.2.1",
-    "mdx-go": "^1.1.11",
+    "mdx-go": "^2.0.0-23",
     "react-emotion": "^9.2.10",
     "react-live": "^1.11.0",
     "react-test-renderer": "^16.5.2",
     "reline": "^1.0.0-beta.3",
     "repng": "^3.1.0",
-    "styled-components": "^4.0.0-beta.8-unpure"
+    "styled-components": "^4.0.0-beta.9"
   },
   "peerDependencies": {
     "styled-components": ">=2.0",

@@ -155,7 +155,7 @@ export const Heading = styled('div')([],
 )
 
 Heading.defaultProps = {
-  is: 'h2',
+  as: 'h2',
   m: 0,
   fontSize: 4
 }

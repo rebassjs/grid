@@ -1,7 +1,7 @@
 const Hero = `
 <Box p={3} width={[ 1, 2/3, 1/2 ]}>
   <Heading
-    is='h1'
+    as='h1'
     my={4}
     fontSize={[ 6, 7 ]}>
     Rebass Grid

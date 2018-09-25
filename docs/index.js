@@ -51,7 +51,7 @@ const Toolbar = ({
     color={colors.magenta}
     bg='black'>
     <BaseButton
-      is='a'
+      as='a'
       href='https://github.com/rebassjs/grid'
       children='Documentation'
     />

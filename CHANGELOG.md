@@ -1,5 +1,9 @@
 # Changelog
 
+## v6.0.0-4 2018-09-25
+
+- Update to Babel 7
+
 ## v6.0.0-3 2018-09-14
 
 - Update dependencies

@@ -1,5 +1,17 @@
 # Changelog
 
+## v6.0.0-3 2018-09-14
+
+- Update dependencies
+
+## v6.0.0-2 2018-09-12
+
+- Adjust build scripts
+
+## v6.0.0-1 2018-09-12
+
+- Simplifies code base to be inline with Rebass v3 and for use with styled-components v4
+
 ## v6.0.0-0 2018-09-02
 
 - Rename package to `@rebass/grid`

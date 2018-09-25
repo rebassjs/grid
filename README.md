@@ -8,17 +8,17 @@ Responsive React grid system built with
 [styled-components][sc] and
 [emotion][emotion] (previously called `grid-styled`)
 
-https://rebassjs.org/grid
+https://grid.rebassjs.org
 
 [![Build Status][badge]][travis]
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
 
-[badge]: https://img.shields.io/travis/rebassjs/grid.svg?style=flat-square
+[badge]: https://flat.badgen.net/travis/rebassjs/grid/master
 [travis]: https://travis-ci.org/rebassjs/grid
 
-[downloads-badge]: https://img.shields.io/npm/dw/@rebass/grid.svg?style=flat-square
-[version-badge]: https://img.shields.io/npm/v/@rebass/grid.svg?style=flat-square
+[downloads-badge]: https://flat.badgen.net/npm/dw/@rebass/grid
+[version-badge]: https://flat.badgen.net/npm/v/@rebass/grid
 [npm]: https://npmjs.com/package/@rebass/grid
 
 

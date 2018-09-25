@@ -335,11 +335,14 @@ const Column = props => (
 
 ## Changing the HTML element
 
-Rebsas Grid components use the [`is` prop][is-prop] from [@rebass/components][] to change the underlying HTML element.
+Rebass Grid is intended for use with styled-components v4.
+To change the underlying HTML element, use the styled-components `as` prop.
 
 ```jsx
-<Box is='header' />
+<Box as='header' />
 ```
+
+*Note:* Previous versions of grid-styled supported an `is` prop, which has been deprecated in favor of the styled-components `as` prop.
 
 ## Theming
 

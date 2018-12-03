@@ -46,7 +46,7 @@ const App = () => (
 
 ### Emotion
 
-*Or* for emotion, import `@rebass/grid/emotion`
+*Or* for emotion , import `@rebass/grid/emotion`  (uses v10 `@emotion/styled`)
 
 ```js
 import { Flex, Box } from '@rebass/grid/emotion'

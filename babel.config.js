@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'emotion') {
     "transform-rename-import",
     {
       "original": "^styled-components$",
-      "replacement": "react-emotion"
+      "replacement": "@emotion/styled"
     }
   ])
 }

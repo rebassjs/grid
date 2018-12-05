@@ -48,11 +48,6 @@
     "repng": "^3.1.0",
     "styled-components": "^4.1.2"
   },
-  "peerDependencies": {
-    "styled-components": ">=2.0",
-    "emotion": ">=9.0",
-    "react-emotion": ">=9.0"
-  },
   "jest": {
     "roots": [
       "<rootDir>/tests/"

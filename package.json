@@ -31,7 +31,6 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@compositor/kit": "^1.0.47",
     "@emotion/core": "^10.0.1",
     "@emotion/styled": "^10.0.1",
     "@reach/component-component": "^0.1.1",

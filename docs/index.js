@@ -1,5 +1,4 @@
 import React from 'react'
-import { XRay } from '@compositor/kit'
 import { Link } from 'mdx-go'
 import {
   LiveProvider,
@@ -42,7 +41,6 @@ const toggle = key => state => ({ [key]: !state[key] })
 const Toolbar = ({
   setState,
   index,
-  xray,
   ...props
 }) =>
   <Flex
@@ -56,11 +54,6 @@ const Toolbar = ({
       children='Documentation'
     />
     <Box mx='auto' />
-    <BaseButton
-      onClick={e => setState(toggle('xray'))}
-      active={xray}
-      children='X-Ray'
-    />
     <ArrowButton
       left
       title='Previous'
@@ -105,16 +98,12 @@ const sx = {
     color: '#fff',
     backgroundColor: '#f00'
   },
-  xray: {
-    transition: 'background-color .3s ease-out'
-  }
 }
 
 export default props =>
   <Component
     initialState={{
       index: 0,
-      xray: false
     }}
     children={({ state, setState }) => {
       const code = examples[Math.abs(state.index) % examples.length] || '<pre>missing example</pre>'
@@ -126,15 +115,9 @@ export default props =>
             code={code}
             scope={scope}
             mountStylesheet={false}>
-            <XRay
-              disabled={!state.xray}
-              style={sx.xray}
-              color={colors.magenta}
-              backgroundColor='#000'>
               <div style={sx.top}>
                 <LivePreview style={sx.preview} />
               </div>
-            </XRay>
             <LiveError style={sx.error} />
             <LiveEditor style={sx.bottom} />
           </LiveProvider>

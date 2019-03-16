@@ -42,7 +42,17 @@ exports[`Box renders with props 1`] = `
 @media screen and (min-width:40em) {
   .c0 {
     margin: 8px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c0 {
     padding-left: 8px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c0 {
     padding-right: 8px;
   }
 }

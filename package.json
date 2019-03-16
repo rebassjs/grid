@@ -36,6 +36,7 @@
     "jest-emotion": "^10.0.9",
     "jest-styled-components": "^6.3.1",
     "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-test-renderer": "^16.8.4",
     "styled-components": "^4.1.3"
   },

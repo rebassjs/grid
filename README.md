@@ -1,5 +1,5 @@
 
-<img src='docs/logo.png' width='128' height='128' />
+<img src='logo.png' width='128' height='128' />
 
 # Rebass Grid
 

@@ -406,7 +406,7 @@ const App = () => (
 
 ## Related
 
-- [rebass space][]
+- [Rebass Space][]
 - [styled-system][]
 - [@rebass/components][]
 - [Rebass](https://rebassjs.org/)

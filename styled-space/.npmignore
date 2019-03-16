@@ -1,5 +1,0 @@
-src
-.babelrc
-.nyc_output
-coverage
-test.js*

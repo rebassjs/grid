@@ -5,8 +5,8 @@
 
 Responsive React grid system built with
 [styled-system][], with support for
-[styled-components][sc] and
-[emotion][emotion] (previously called `grid-styled`)
+[styled-components][] and
+[emotion][] (previously called `grid-styled`)
 
 https://rebassjs.org/grid
 
@@ -387,12 +387,12 @@ which helps keep spacing consistent and elements aligned even when nesting compo
 
 ## Styled Space
 
-Rebass Grid also works with the optional [styled-space][] package.
+Rebass Grid also works with the optional [Rebass Space][] package.
 
 ```jsx
 import React from 'react'
 import { Flex, Box } from '@rebass/grid'
-import Space from 'styled-space'
+import Space from '@rebass/space'
 
 const App = () => (
   <Flex>
@@ -406,15 +406,15 @@ const App = () => (
 
 ## Related
 
-- [styled-space][]
+- [Rebass Space][]
 - [styled-system][]
 - [@rebass/components][]
 - [Rebass](https://rebassjs.org/)
-- [styled-components][sc]
-- [emotion][emotion]
+- [styled-components][]
+- [emotion][]
 
-[styled-space]: https://github.com/rebassjs/grid/tree/master/styled-space
-[sc]: https://github.com/styled-components/styled-components
+[rebass space]: https://github.com/rebassjs/space
+[styled-components]: https://github.com/styled-components/styled-components
 [styled-system]: https://github.com/jxnblk/styled-system
 [emotion]: https://github.com/emotion-js/emotion
 [is-prop]: https://github.com/jxnblk/styled-system/tree/master/system-components#changing-the-underlying-html-element

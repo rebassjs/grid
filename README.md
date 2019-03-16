@@ -1,5 +1,5 @@
 
-<img src='docs/logo.png' width='128' height='128' />
+<img src='logo.png' width='128' height='128' />
 
 # Rebass Grid
 
@@ -8,7 +8,7 @@ Responsive React grid system built with
 [styled-components][sc] and
 [emotion][emotion] (previously called `grid-styled`)
 
-https://grid.rebassjs.org
+https://rebassjs.org/grid
 
 [![Build Status][badge]][travis]
 [![Downloads][downloads-badge]][npm]

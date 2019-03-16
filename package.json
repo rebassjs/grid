@@ -6,8 +6,6 @@
   "scripts": {
     "prepare": "rm -rf dist && babel src -d dist && npm run emotion",
     "test": "jest",
-    "start": "mdx-go docs",
-    "build": "mdx-go build docs -d site",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "logo": "repng docs/logo.js -w 768 -h 768 -d docs -f logo.png"
   },
@@ -23,29 +21,24 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^3.1.11"
+    "styled-system": "^4.0.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "@emotion/core": "^10.0.1",
-    "@emotion/styled": "^10.0.1",
-    "@reach/component-component": "^0.1.1",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.4.2",
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "babel-jest": "^24.5.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
-    "jest": "^23.6.0",
-    "jest-emotion": "^10.0.1",
+    "jest": "^24.5.0",
+    "jest-emotion": "^10.0.9",
     "jest-styled-components": "^6.3.1",
-    "mdx-go": "^2.0.0-32",
-    "react-live": "^1.12.0",
-    "react-test-renderer": "^16.6.3",
-    "reline": "^1.0.0-beta.3",
-    "repng": "^3.1.0",
-    "styled-components": "^4.1.2"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-test-renderer": "^16.8.4",
+    "styled-components": "^4.1.3"
   },
   "jest": {
     "roots": [

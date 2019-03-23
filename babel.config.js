@@ -3,15 +3,20 @@ module.exports = {
     '@babel/env',
     '@babel/react'
   ],
-  plugins: []
-}
-
-if (process.env.NODE_ENV === 'emotion') {
-  module.exports.plugins.push([
-    "transform-rename-import",
-    {
-      "original": "^styled-components$",
-      "replacement": "@emotion/styled"
+  plugins: [
+    'babel-plugin-styled-components',
+  ],
+  env: {
+    emotion: {
+      plugins: [
+        [
+          "transform-rename-import",
+          {
+            "original": "^styled-components$",
+            "replacement": "@emotion/styled"
+          }
+        ]
+      ]
     }
-  ])
+  }
 }

@@ -31,6 +31,7 @@
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.9",
     "babel-jest": "^24.5.0",
+    "babel-plugin-styled-components": "^1.10.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "jest": "^24.5.0",
     "jest-emotion": "^10.0.9",

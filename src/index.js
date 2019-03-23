@@ -22,8 +22,7 @@ export const Box = styled('div')({
   fontSize,
   flex,
   order,
-  alignSelf,
-  props => props.css
+  alignSelf
 )
 
 Box.displayName = 'Box'

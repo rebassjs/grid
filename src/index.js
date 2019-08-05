@@ -2,52 +2,40 @@ import styled from 'styled-components'
 import {
   space,
   color,
-  width,
-  fontSize,
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent,
-  flex,
-  order,
-  alignSelf
+  layout,
+  flexbox,
+  typography
 } from 'styled-system'
+import propTypes from '@styled-system/prop-types'
 
 export const Box = styled('div')({
   boxSizing: 'border-box'
 },
   space,
   color,
-  width,
-  fontSize,
-  flex,
-  order,
-  alignSelf
+  layout,
+  typography,
+  flexbox,
 )
 
 Box.displayName = 'Box'
 
 Box.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
+  ...propTypes.space,
+  ...propTypes.color,
+  ...propTypes.layout,
+  ...propTypes.typography,
+  ...propTypes.flexbox,
 }
 
 export const Flex = styled(Box)({
   display: 'flex'
 },
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent
+  flexbox,
 )
 
 Flex.displayName = 'Flex'
 
 Flex.propTypes = {
-  ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
-  ...alignItems.propTypes,
-  ...justifyContent.propTypes,
+  ...propTypes.flexbox,
 }

@@ -21,6 +21,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "@styled-system/prop-types": "^5.0.18",
     "styled-system": "^5.0.18"
   },
   "devDependencies": {

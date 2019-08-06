@@ -1,5 +1,13 @@
 # Changelog
 
+## v6.1.0 2019-08-06
+
+- Update to Styled System v5
+
+## v6.0.0 2019-03-23
+
+- Official release with Styled Components v4
+
 ## v6.0.0-4 2018-09-25
 
 - Update to Babel 7

@@ -25,22 +25,22 @@
     "styled-system": "^5.0.18"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.9",
-    "babel-jest": "^24.5.0",
-    "babel-plugin-styled-components": "^1.10.0",
+    "@emotion/core": "^10.0.15",
+    "@emotion/styled": "^10.0.15",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-transform-rename-import": "^2.3.0",
-    "jest": "^24.5.0",
-    "jest-emotion": "^10.0.9",
-    "jest-styled-components": "^6.3.1",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-test-renderer": "^16.8.5",
-    "styled-components": "^4.2.0"
+    "jest": "^24.8.0",
+    "jest-emotion": "^10.0.14",
+    "jest-styled-components": "^6.3.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "jest": {
     "roots": [

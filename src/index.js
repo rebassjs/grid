@@ -4,18 +4,22 @@ import {
   color,
   layout,
   flexbox,
-  typography
+  typography,
+  compose
 } from 'styled-system'
 import propTypes from '@styled-system/prop-types'
 
-export const Box = styled('div')({
-  boxSizing: 'border-box'
-},
+const boxProps = compose(
   space,
   color,
   layout,
   typography,
   flexbox,
+)
+export const Box = styled('div')({
+  boxSizing: 'border-box'
+},
+  boxProps,
 )
 
 Box.displayName = 'Box'
@@ -30,12 +34,6 @@ Box.propTypes = {
 
 export const Flex = styled(Box)({
   display: 'flex'
-},
-  flexbox,
-)
+})
 
 Flex.displayName = 'Flex'
-
-Flex.propTypes = {
-  ...propTypes.flexbox,
-}
